@@ -8,12 +8,13 @@
 
 // USER VARIABLES SECTION
 
-$accent:     orange // Accent Color
+$accent:     #2462F2 // Accent Color
 $fontsize:   16px // Body Font Size
-$textcolor:  #fff// Text Color
+$textcolor:  #000// Text Color
 $mainfamily: roboto, sans-serif // Main Font Family
+$highwaySansPro: highwaySansPro, sans-serif
 $base-duration: 0.2s
-$base-timing: easy-in-out
+$base-timing: ease-in-out
 // Bootstrap compatible gutter variable => $gutter
 
 $grid-gutter-width: 20px
@@ -27,19 +28,21 @@ $gutter: $grid-gutter-width
 		font-family: $f-name
 		font-style: $f-style
 		font-weight: $f-weight
-		src: url($f-url) format('woff2')
+		src: url($f-url'.woff2') format('woff2')
+    src: url($f-url'.woff') format('woff')
 
+@include font('roboto', light, 300, '../fonts/Roboto-Thin')
+@include font('roboto', normal, 400, '../fonts/Roboto-Regular')
+@include font('roboto', medium, 500, '../fonts/Roboto-Medium')
+@include font('roboto', bold, 700, '../fonts/Roboto-Bold')
 
-@include font('roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
-
+@include font('highwaySansPro', light, 300, '../fonts/PFHighwaySansPro-Light.')
+@include font('highwaySansPro', normal, 400, '../fonts/PFHighwaySansPro-Regular')
 
 // GENERAL DOCUMENT STYLES
 
-::placeholder
-	color: #666
+//::placeholder
+	//color: #666
 
 // ::selection
 // 	background-color: $accent
@@ -51,7 +54,8 @@ input, textarea
 		border-color: red
 	&:required:valid
 		border-color: green
-
+label
+	margin: 0
 body
 	font-size: $fontsize
 	min-width: 320px
