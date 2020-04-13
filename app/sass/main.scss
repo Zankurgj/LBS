@@ -14,6 +14,7 @@ h1 {
 // UI
 // BUTTONS
 .btn--primary {
+  display: inline-block;
   background: #2462f2;
   border-radius: 4px;
   color: #fff;
@@ -24,6 +25,7 @@ h1 {
   min-width: 208px;
   &:hover {
     background: #1253ea;
+    color: #fff;
   }
   &:active {
     color: rgba($color: #fff, $alpha: 0.7);
@@ -371,5 +373,20 @@ h1 {
     left: -34px;
     top: 50%;
     transform: translate(0, -50%);
+  }
+}
+
+.test-btn-croup {
+  display: flex;
+  justify-content: center;
+  padding-top: 24px;
+}
+
+.test-container {
+  label {
+    margin-bottom: 24px;
+  }
+  .btn--primary {
+    margin-right: 24px;
   }
 }
