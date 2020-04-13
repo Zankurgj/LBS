@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   startAppend();
 });
+// стартовый индекс
 let amountQestionsIndex = 0;
-
+// данные с бека
 const qestionsArr = [
   { title: 'title1', q: ['question1', 'question2', 'question3'] },
   { title: 'title2', q: ['question1', 'question2', 'question3'] },
@@ -14,6 +15,7 @@ const qestionsArr = [
 
 const startAppend = () => {
   if (document.querySelector(`.test-container`)) {
+    // проверяем наличие прохождения теста
     const storage = JSON.parse(localStorage.getItem('test'));
     if (!storage) {
       amountQestionsIndex = 0;
@@ -24,6 +26,7 @@ const startAppend = () => {
   }
 };
 
+// ищем последний отвеченный вопрос
 const findIndex = () => {
   const answersNumberIndex = Object.keys(
     JSON.parse(localStorage.getItem('test'))
@@ -36,6 +39,7 @@ const findIndex = () => {
   }
 };
 
+// добавление шаблона
 const appendElement = (index) => {
   const container = document.querySelector(`.test-container`);
   container.innerHTML = ``;
@@ -51,6 +55,7 @@ const addScreenElement = (template) => {
   return wrapper;
 };
 
+// выбор шаблона, можно добавить в бек тип шаблона
 const setTemplate = (data) => {
   if (data) {
     template = questionsTemplate(data);
@@ -59,6 +64,7 @@ const setTemplate = (data) => {
   }
   return template;
 };
+// шаблоны
 const questionsTemplate = (data) => `<h1>${data.title}</h1>
 <form onsubmit="getFormData();return false" id="qForm">
   ${questions(data)} 
@@ -87,6 +93,7 @@ const questions = (data) => {
   return question;
 };
 
+// обработка данных формы
 const getFormData = () => {
   const form = document.getElementById('qForm');
   const radios = form.querySelectorAll('input[type="radio"]');
@@ -102,6 +109,8 @@ const getFormData = () => {
     }
   });
 };
+
+// вспомогательные функции
 const prewPage = () => {
   if (amountQestionsIndex > 0) {
     appendElement(amountQestionsIndex - 1);
@@ -117,5 +126,3 @@ const clearTest = () => {
   localStorage.clear();
   startAppend();
 };
-
-const nextQestions = () => {};
