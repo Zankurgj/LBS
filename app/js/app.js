@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
+  $('.features1-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    prevArrow: $('.prev'),
+    nextArrow: $('.next'),
+    dots: true,
+  });
   startAppend();
 });
 // стартовый индекс
@@ -125,4 +133,15 @@ const nextPeage = () => {
 const clearTest = () => {
   localStorage.clear();
   startAppend();
+};
+
+// help
+const playHeadVideo = (btn) => {
+  btn.classList.add('jsHide');
+  document.querySelector('#headVideo').play();
+};
+const stopHeadVideo = () => {
+  const btn = document.querySelector('#playHeadBtn');
+  btn.classList.remove('jsHide');
+  document.querySelector('#headVideo').pause();
 };

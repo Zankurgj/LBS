@@ -1,0 +1,74 @@
+// IMPORT SECTION
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss'; // Bootstrap Breakpoints mixin
+// @import "node_modules/bootstrap/scss/bootstrap-grid.scss" // Optional Bootstrap Grid
+// @import "node_modules/bootstrap/scss/utilities/_sizing.scss" // Optional Bootstrap Utilites
+@import 'node_modules/slick-carousel/slick/slick.scss'; // Slick carousel
+
+// USER VARIABLES SECTION
+
+// $accent: #2462f2; // Accent Color
+// $fontsize: 16px; // Body Font Size
+// $textcolor: #000; // Text Color
+// $mainfamily: roboto, sans-serif; // Main Font Family
+// $highwaySansPro: highwaySansPro, sans-serif;
+// $base-duration: 0.2s;
+// $base-timing: ease-in-out;
+// Bootstrap compatible gutter variable => $gutter
+
+$grid-gutter-width: 20px;
+$gutter: $grid-gutter-width;
+
+// FONTS LOAD SECTION
+
+@mixin font($f-name, $f-style, $f-weight, $f-url) {
+  @font-face {
+    font-family: $f-name;
+    font-style: $f-style;
+    font-weight: $f-weight;
+    src: url($f-url + '.woff2') format('woff2');
+    src: url($f-url + '.woff') format('woff');
+  }
+}
+
+@include font('roboto', light, 300, '../fonts/Roboto-Thin');
+@include font('roboto', normal, 400, '../fonts/Roboto-Regular');
+@include font('roboto', medium, 500, '../fonts/Roboto-Medium');
+@include font('roboto', bold, 700, '../fonts/Roboto-Bold');
+
+@include font('highwaySansPro', light, 300, '../fonts/PFHighwaySansPro-Light');
+@include font(
+  'highwaySansPro',
+  normal,
+  400,
+  '../fonts/PFHighwaySansPro-Regular'
+);
+
+// GENERAL DOCUMENT STYLES
+
+//::placeholder
+//color: #666
+
+// ::selection
+// 	background-color: $accent
+// 	color: #fff
+.container-fluid {
+  display: flex;
+}
+.container {
+  width: 1200px;
+  padding: 0 48px;
+}
+//hide el
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

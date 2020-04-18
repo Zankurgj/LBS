@@ -1,0 +1,267 @@
+button,
+.btn,
+input[type='submit'] {
+  background-color: transparent;
+  border-style: none;
+  border-width: none;
+  border-color: transparent;
+  font-family: $mainfamily;
+  transition: all $base-duration $base-timing;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+  padding: 0;
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn--primary {
+  display: inline-block;
+  background: #2462f2;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 19px;
+  min-width: 208px;
+  &:hover {
+    background: #1253ea;
+    color: #fff;
+  }
+  &:active {
+    color: rgba($color: #fff, $alpha: 0.7);
+    background: #0e4bd8;
+  }
+}
+
+.btn--secondary {
+  display: inline-block;
+  border: 1px solid $gray2;
+  box-sizing: border-box;
+  border-radius: 6px;
+  padding: 16px 26px;
+  color: $sec;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  &:hover {
+    color: $black;
+    border-color: $gray4;
+  }
+}
+.btn--play {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: $gray1;
+  border: solid 2px $white;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-32%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 16px 0 16px 31px;
+    border-color: transparent transparent transparent $black;
+    transition: all $base-duration $base-timing;
+  }
+  &:hover {
+    &::before {
+      border-color: transparent transparent transparent $accent;
+    }
+  }
+}
+
+.btn--header-circle {
+  background-color: #fafafc;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  &:hover {
+    box-shadow: 0px 1px 24px rgba(0, 0, 0, 0.1);
+  }
+}
+.btn--header-circle--back {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: #98a4b2;
+  &:hover {
+    color: $accent;
+  }
+}
+.btn--header-circle--profile {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='17' viewBox='0 0 18 17' width='18' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%232462f2' stroke-width='1.3'%3E%3Cpath d='m17 16.0004-.0641-.4485c-.4222-2.9559-2.9538-5.1515-5.9397-5.1515h-3.99243c-2.9859 0-5.51742 2.1956-5.93969 5.1515l-.06408.4485' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect height='7.5' rx='3.75' width='7.5' x='5.65' y='.65'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.btn--toogle--large {
+  @extend .visually-hidden;
+  & + label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    min-width: 170px;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    transition: $base-duration $base-timing;
+    color: #444;
+    white-space: nowrap;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    cursor: pointer;
+    &:hover {
+      color: $accent;
+    }
+  }
+  &:first-of-type + label {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+  }
+  &:last-of-type + label {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  &:checked + label {
+    border: 2px solid $accent;
+    font-weight: 500;
+    color: $accent;
+  }
+}
+.btn--radio {
+  @extend .visually-hidden;
+  & + label {
+    display: flex;
+    align-items: center;
+    min-width: 240px;
+    height: 72px;
+    padding-left: 24px;
+    box-shadow: 0px 0px 0px 1px #e6e6e6;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    color: #444;
+    transition: $base-duration $base-timing;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 0px 0px 1px #cfcfcf;
+    }
+  }
+  &:checked + label {
+    box-shadow: 0px 0px 0px 2px $accent;
+    font-weight: 500;
+  }
+}
+.btn--radio--label {
+  & + label {
+    position: relative;
+    padding-right: 72px;
+    box-sizing: border-box;
+    &::before {
+      content: '';
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid #e6e6e6;
+      background-color: #fff;
+      transition: $base-duration $base-timing;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: 31px;
+      top: 50%;
+      transform: translate(0, -50%) scale(0);
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border-radius: 50%;
+      opacity: 0;
+      transition: $base-duration $base-timing;
+    }
+    &:hover {
+      &::before {
+        border: 1px solid #cfcfcf;
+      }
+    }
+  }
+  &:checked + label {
+    color: $accent;
+    &::before {
+      background-color: $accent;
+      border-color: $accent;
+    }
+    &::after {
+      opacity: 1;
+      transform: translate(0, -50%) scale(1);
+    }
+  }
+}
+.btn--toogle-circle {
+  @extend .visually-hidden;
+  & + label {
+    display: block;
+    position: relative;
+    width: 48px;
+    height: 24px;
+    background-color: #e6e6e6;
+    border-radius: 12px;
+    transition: all $base-duration $base-timing;
+    cursor: pointer;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 9px;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 12px;
+      height: 10px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-image: url("data:image/svg+xml,%3Csvg fill='none' height='11' viewBox='0 0 13 11' width='13' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m11.3146.793541v.000002c-.2247.006693-.4379.100383-.5948.261267l-6.71958 6.7196-2.05254-2.05254c-.07956-.08245-.17467-.14831-.27986-.19377-.10584-.04574-.21974-.06991-.33504-.07108-.1153-.00118-.22968.02067-.336427.06425l.075597.18516-.075598-.18516c-.10675.04358-.203732.10803-.285265.18956s-.145978.17852-.189561.28527-.065428.22112-.064255.33642.02534.22921.071086.33505c.045459.10518.111319.20029.193762.27985l2.665321 2.66532.00003.00003c.16254.16247.38294.25373.61275.25373s.45021-.09126.61275-.25373l.00002-.00003 7.33241-7.33238c.1246-.12158.2098-.2779.2443-.4486.0346-.17118.0167-.34883-.0513-.50966-.0681-.16084-.1832-.29736-.3301-.391681-.147-.094316-.3191-.142026-.4937-.136878z' fill='%23fafafc' stroke='%23fff' stroke-width='.4'/%3E%3C/svg%3E");
+      transition: all $base-duration $base-timing;
+      opacity: 0;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 5px;
+      width: 16px;
+      height: 16px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: all $base-duration $base-timing;
+    }
+  }
+  &:checked + label {
+    background-color: $accent;
+    &::before {
+      opacity: 1;
+    }
+    &::after {
+      transform: translate(22px, 0px);
+    }
+  }
+}
+
+.btn-wrapper {
+  display: flex;
+}

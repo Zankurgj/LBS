@@ -11,186 +11,68 @@
   </head>
 
   <body>
-    <header class="main-header">
-      <a href="#" class="btn btn--header-circle btn--header-circle--back">
-        <svg
-          fill="none"
-          height="9"
-          viewBox="0 0 6 9"
-          width="6"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m5.04986.290325c.38665.386649.38665 1.014255 0 1.400905l-2.63463 2.63462 2.63463 2.63463c.38665.38665.38665 1.01425 0 1.4009s-1.01425.38665-1.4009 0l-3.37524-3.37524c-.365168-.36516-.3651679-.95634 0-1.32058l3.37524-3.375235c.38665-.3866481 1.01425-.3866481 1.4009 0z"
-            fill="currentColor"
-          />
-        </svg>
-        <span class="visually-hidden">Назат</span>
-      </a>
-      <a href="#" class="main-header-logo">
-        <img src="./images/dest/Group.svg" alt="logo" />
-        <span class="visually-hidden">Главная</span>
-      </a>
-      <a href="#" class="btn btn--header-circle btn--header-circle--profile">
-        <span class="visually-hidden">Личный кабинет</span>
-      </a>
-    </header>
-
-    <section class="form-container">
-      <div class="form-container-header">
-        <h1>Формат курса</h1>
-        <p class="test-form-field-description">
-          На основании результатов теста автоматически предлагаем вам следующий
-          список тем для изучения
-        </p>
-      </div>
-      <form action="" class="test-form">
-        <fieldset class="test-form-field">
-          <legend class="test-form-legend">Выберите формат курса</legend>
-          <div class="btn-wrapper">
-            <input
-              type="radio"
-              id="formatInPerson"
-              name="format"
-              value="formatInPerson"
-              class="btn--toogle--large"
-              checked
-            />
-            <label for="formatInPerson"> Очно </label>
-            <input
-              type="radio"
-              id="formatInAbsentia"
-              name="format"
-              value="formatInPerson"
-              class="btn--toogle--large"
-            />
-            <label for="formatInAbsentia">
-              Заочно
-            </label>
-          </div>
-        </fieldset>
-        <fieldset class="test-form-field test-form-field--curator">
-          <legend class="test-form-legend">Куратор</legend>
-          <div class="btn-wrapper">
-            <input
-              type="radio"
-              id="curatoInPerson"
-              name="curator"
-              value="curatoInPerson"
-              class="btn--radio btn--radio--label"
-              checked
-            />
-            <label for="curatoInPerson">Самостоятельно</label>
-            <input
-              type="radio"
-              id="curatorWithСurator"
-              name="curator"
-              value="curatorWithСurator"
-              class="btn--radio btn--radio--label"
-            />
-            <label for="curatorWithСurator"> С куратором</label>
-            <input
-              type="radio"
-              id="curatorVip"
-              name="curator"
-              value="curatorVip"
-              class="btn--radio btn--radio--label"
-            />
-            <label for="curatorVip"> С Алексеем Герваш</label>
-          </div>
-        </fieldset>
-        <fieldset class="test-form-field">
-          <legend class="test-form-legend">Обязательные материалы</legend>
-          <ul class="test-form-list">
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Панические атаки
-            </li>
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Панические атаки
-            </li>
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Взлет
-            </li>
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Взлет
-            </li>
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Посадка
-            </li>
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Посадка
-            </li>
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Перфекционизм
-            </li>
-            <li class="test-form-list-item test-form-list-item--checkicon">
-              Перфекционизм
-            </li>
-          </ul>
-        </fieldset>
-        <fieldset class="test-form-field">
-          <legend class="test-form-legend">Дополнительные материалы</legend>
-          <div class="test-form-field-toogle-wrapper">
-            <div class="test-form-field-text">
-              <span class="test-form-field-title">Название в одну строку</span>
-              <span class="test-form-field-cost">4 440 ₽</span>
-            </div>
-            <input
-              type="checkbox"
-              id="cost1"
-              name="cost"
-              value="cost1"
-              class="btn--toogle-circle"
-            />
-            <label for="cost1"></label>
-          </div>
-          <div class="test-form-field-toogle-wrapper">
-            <div class="test-form-field-text">
-              <span class="test-form-field-title">Название в одну строку</span>
-              <span class="test-form-field-cost">4 440 ₽</span>
-            </div>
-            <input
-              type="checkbox"
-              id="cost2"
-              name="cost"
-              value="cost2"
-              class="btn--toogle-circle"
-              checked
-            />
-            <label for="cost2"></label>
-          </div>
-          <div class="test-form-field-toogle-wrapper">
-            <div class="test-form-field-text">
-              <span class="test-form-field-title">Название в одну строку</span>
-              <span class="test-form-field-cost">4 440 ₽</span>
-            </div>
-            <input
-              type="checkbox"
-              id="cost3"
-              name="cost"
-              value="cost3"
-              class="btn--toogle-circle"
-            />
-            <label for="cost3"></label>
-          </div>
-        </fieldset>
-        <div class="test-form-field test-form-field--submit">
-          <a href="#" class="promocode-link">
-            <img
-              src="./images/dest/promocode_icon.svg"
-              alt="promocode icon"
-              class="promocode-link-icon"
-            />
-            У меня есть промокод
+    <main class="head-block container-fluid">
+      <section class="head-block-text">
+        <header class="head-header">
+          <a href="#" class="head-header-logo">
+            <img src="images/dest/Group.svg" alt="logo" />
+            <span class="visually-hidden">Главная</span>
           </a>
-          <button type="submit" class="btn--primary">
-            Оплатить 3 000 ₽
+        </header>
+        <div class="head-block-text-inner">
+          <h2>Добро пожаловать в центр «Летаем без страха»</h2>
+          <p class="head-block-text-inner-text">
+            За 12 лет работы он стал настоящим домом для аэрофобов и всех
+            тревожных людей. Мы помогаем не только вернуть спокойствие во время
+            полета, но и существенно понизить уровень тревоги в вашей жизни.
+            Наша задача - позаботиться о том, чтобы вы перестали чувствовать
+            себя один на один с вашими страхами.
+          </p>
+        </div>
+        <div class="btn-wrapper">
+          <a href="#" class="btn btn--primary btn--head-block"
+            >Пройти тест на аэрофобию</a
+          >
+          <a href="#" class="btn btn--secondary btn--head-block"
+            >Войти в личный кабинет</a
+          >
+        </div>
+      </section>
+      <section class="head-block-video">
+        <button
+          class="btn--play btn--play--head-block-video"
+          id="playHeadBtn"
+          onclick="playHeadVideo(this)"
+        >
+          <span class="visually-hidden">Старт</span>
+        </button>
+        <div class="head-block-video-content-wrapper" onclick="stopHeadVideo()">
+          <video
+            class="head-block-video-content"
+            id="headVideo"
+            loop
+            muted="true"
+            poster="./images/dest/image-video.jpg"
+          >
+            <!-- <source src="./video/sample_video.mp4" type="video/webm" /> -->
+            <source src="./video/sample_video.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+    </main>
+    <section class="features1-block">
+      <div class="container">
+        <h2>Вы попали по адресу, если</h2>
+        <div class="features1-slider-wrapper slider-wrapper">
+          <div class="features1-slider"></div>
+          <button class="slider-arrow slider-arrow--prev">
+            <span class="visually-hidden">предыдущий слайд</span>
+          </button>
+          <button class="slider-arrow slider-arrow--next">
+            <span class="visually-hidden">следующий слайд</span>
           </button>
         </div>
-        <div class="test-form-field test-btn-croup">
-          <a href="./test.html" class="btn btn--primary">Пройти тест</a>
-        </div>
-      </form>
+      </div>
     </section>
     <script src="js/app.min.js"></script>
   </body>

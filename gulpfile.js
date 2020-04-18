@@ -42,7 +42,8 @@ function styles() {
 
 function scripts() {
   return src([
-    // 'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+    'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
+    'node_modules/slick-carousel/slick/slick.min.js',
     'app/js/app.js', // app.js. Always at the end
   ])
     .pipe(concat('app.min.js'))
@@ -85,7 +86,7 @@ function deploy() {
 // Watching
 
 function startwatch() {
-  watch('app/sass/*.' + preprocessor + '', parallel('styles'));
+  watch('app/sass/**/*.' + preprocessor + '', parallel('styles'));
   watch(['app/**/*.js', '!app/js/*.min.js'], parallel('scripts'));
   watch(['app/**/*.{' + imageswatch + '}'], parallel('images'));
   watch(['app/**/*.{' + fileswatch + '}']).on('change', browserSync.reload);
