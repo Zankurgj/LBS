@@ -13,6 +13,8 @@ const imagemin = require('gulp-imagemin');
 const newer = require('gulp-newer');
 const rsync = require('gulp-rsync');
 const del = require('del');
+const gulp = require('gulp');
+const svgSprite = require('gulp-svg-sprite');
 
 // Local Server
 
@@ -82,6 +84,33 @@ function deploy() {
     })
   );
 }
+
+// SVG Sprite
+const config = {
+  shape: {
+    dimension: {
+      // Set maximum dimensions
+      maxWidth: 500,
+      maxHeight: 500,
+    },
+    spacing: {
+      // Add padding
+      padding: 0,
+    },
+  },
+  mode: {
+    symbol: {
+      dest: '.',
+    },
+  },
+};
+
+gulp.task('svg-sprite', function (cb) {
+  return gulp
+    .src('app/images/svg-icon/*.svg')
+    .pipe(svgSprite(config))
+    .pipe(gulp.dest('app/images/sprites'));
+});
 
 // Watching
 

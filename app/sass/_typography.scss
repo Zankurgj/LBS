@@ -1,7 +1,7 @@
 body {
   min-width: 320px;
   position: relative;
-  background-color: $gray1;
+  background-color: $white;
   font-family: $mainfamily;
   color: $textcolor;
   font-size: $fontsize;
@@ -51,6 +51,9 @@ h4 {
   font-size: 11px;
   line-height: 16px;
 }
+p {
+  margin: 0;
+}
 input,
 textarea {
   outline: none;
@@ -71,6 +74,7 @@ ul {
 }
 
 a {
+  color: $accent;
   &:hover,
   &:focus {
     text-decoration: none;

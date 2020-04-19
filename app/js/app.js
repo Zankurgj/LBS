@@ -3,9 +3,42 @@ document.addEventListener('DOMContentLoaded', function () {
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 3,
-    prevArrow: $('.prev'),
-    nextArrow: $('.next'),
+    prevArrow: $('.slider-arrow--prev-features1'),
+    nextArrow: $('.slider-arrow--next-features1'),
     dots: true,
+  });
+
+  $('.features2-slider').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    prevArrow: $('.slider-arrow--prev-features2'),
+    nextArrow: $('.slider-arrow--next-features2'),
+    dots: false,
+  });
+  $('.about-team-slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: $('.slider-arrow--prev-about-team'),
+    nextArrow: $('.slider-arrow--next-about-team'),
+    dots: true,
+  });
+  $('.smi-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: $('.slider-arrow--prev-smi'),
+    nextArrow: $('.slider-arrow--next-smi'),
+    dots: false,
+  });
+  $('.history-slider').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    prevArrow: $('.slider-arrow--prev-history'),
+    nextArrow: $('.slider-arrow--next-history'),
+    dots: false,
   });
   startAppend();
 });
@@ -144,4 +177,23 @@ const stopHeadVideo = () => {
   const btn = document.querySelector('#playHeadBtn');
   btn.classList.remove('jsHide');
   document.querySelector('#headVideo').pause();
+};
+
+const spoilerToogle = (el) => {
+  $(el).toggleClass('spoiler--opened');
+  var animateEL = $(el).children('.spoiler-text-wrapper');
+  animateEL.slideToggle(200);
+};
+
+const showPopup = (el) => {
+  const popup = $('#popup-wrapper');
+  const data = $(el).data('popup-index');
+  $(`#${data}`).addClass('js-show-popup');
+  popup.fadeIn(500);
+};
+
+const closePopup = () => {
+  const popup = $('#popup-wrapper');
+  popup.find('.js-show-popup').removeClass('js-show-popup');
+  popup.fadeOut(500);
 };
