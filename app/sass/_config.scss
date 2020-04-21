@@ -19,6 +19,10 @@
 $grid-gutter-width: 20px;
 $gutter: $grid-gutter-width;
 
+$mobile-bp: 812px;
+$tablet-bp: 1024px;
+$laptop-bg: 1366px;
+
 // FONTS LOAD SECTION
 
 @mixin font($f-name, $f-style, $f-weight, $f-url) {
@@ -46,14 +50,9 @@ $gutter: $grid-gutter-width;
 
 // GENERAL DOCUMENT STYLES
 
-//::placeholder
-//color: #666
-
-// ::selection
-// 	background-color: $accent
-// 	color: #fff
 .container-fluid {
   display: flex;
+  width: 100%;
 }
 .container {
   max-width: 1200px;

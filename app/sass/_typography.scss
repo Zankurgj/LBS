@@ -75,6 +75,7 @@ ul {
 
 a {
   color: $accent;
+  transition: color $base-duration $base-timing;
   &:hover,
   &:focus {
     text-decoration: none;

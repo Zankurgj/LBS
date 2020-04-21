@@ -27,6 +27,9 @@
     box-shadow: 0px 1px 24px rgba(0, 0, 0, 0.1);
     color: $accent;
   }
+  @media screen and (max-width: $mobile-bp) {
+    display: none;
+  }
 }
 .slider-arrow--prev {
   left: 0;
@@ -56,6 +59,9 @@
     display: flex;
     position: relative;
     margin-right: 16px;
+    @media screen and (max-width: $mobile-bp) {
+      margin-right: 8px;
+    }
     button {
       font-size: 0;
       line-height: 0;
@@ -76,6 +82,14 @@
         background-color: $gray4;
         transition: all $base-duration $base-timing;
       }
+      @media screen and (max-width: $mobile-bp) {
+        width: 4px;
+        height: 4px;
+        &::before {
+          width: 4px;
+          height: 4px;
+        }
+      }
     }
     &:last-child {
       margin-right: 0;
@@ -83,9 +97,13 @@
     &.slick-active {
       button {
         &::before {
-          content: '';
           transform: scale(1.7);
           background-color: $black;
+        }
+        @media screen and (max-width: $mobile-bp) {
+          &::before {
+            transform: scale(1);
+          }
         }
       }
     }

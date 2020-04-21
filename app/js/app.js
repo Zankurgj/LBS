@@ -6,6 +6,25 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.slider-arrow--prev-features1'),
     nextArrow: $('.slider-arrow--next-features1'),
     dots: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 812,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          infinite: false,
+          arrows: false,
+        },
+      },
+    ],
   });
 
   $('.features2-slider').slick({
@@ -15,6 +34,18 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.slider-arrow--prev-features2'),
     nextArrow: $('.slider-arrow--next-features2'),
     dots: false,
+    responsive: [
+      {
+        breakpoint: 812,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          infinite: false,
+          arrows: false,
+        },
+      },
+    ],
   });
   $('.about-team-slider').slick({
     infinite: true,
@@ -23,7 +54,19 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.slider-arrow--prev-about-team'),
     nextArrow: $('.slider-arrow--next-about-team'),
     dots: true,
+    responsive: [
+      {
+        breakpoint: 812,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: false,
+          arrows: false,
+        },
+      },
+    ],
   });
+
   $('.smi-slider').slick({
     infinite: true,
     slidesToShow: 3,
@@ -31,7 +74,35 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.slider-arrow--prev-smi'),
     nextArrow: $('.slider-arrow--next-smi'),
     dots: false,
+    responsive: [
+      {
+        breakpoint: 812,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          infinite: false,
+          arrows: false,
+        },
+      },
+    ],
   });
+  $('.app-block-item-container').slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+    centerMode: true,
+    mobileFirst: true,
+    responsive: [
+      {
+        breakpoint: 812,
+        settings: 'unslick',
+      },
+    ],
+  });
+
   $('.history-slider').slick({
     infinite: true,
     slidesToShow: 2,
@@ -39,6 +110,18 @@ document.addEventListener('DOMContentLoaded', function () {
     prevArrow: $('.slider-arrow--prev-history'),
     nextArrow: $('.slider-arrow--next-history'),
     dots: false,
+    responsive: [
+      {
+        breakpoint: 812,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          infinite: false,
+          arrows: false,
+        },
+      },
+    ],
   });
   startAppend();
 });

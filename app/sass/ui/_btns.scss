@@ -271,9 +271,12 @@ input[type='submit'] {
   background: $white;
   padding: 22px 96px 22px 0;
   box-shadow: inset 0px -1px 0px $gray2;
-  // border-radius: 8px;
   cursor: pointer;
   min-height: 96px;
+  @media screen and (max-width: $mobile-bp) {
+    padding: 12px 40px 12px 0;
+    min-height: 80px;
+  }
   .spoiler-icon {
     display: block;
     position: absolute;
@@ -283,21 +286,37 @@ input[type='submit'] {
     height: 34px;
     color: $sec;
     transition: all $base-duration $base-timing;
+    @media screen and (max-width: $mobile-bp) {
+      top: 30px;
+      width: 20px;
+      height: 20px;
+    }
   }
   .spoiler-desc {
     font-size: 18px;
     line-height: 26px;
     color: $black;
+    @media screen and (max-width: $mobile-bp) {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
   .spoiler-text-wrapper {
     padding: 18px 0 28px 32px;
     overflow: hidden;
     display: none;
+    @media screen and (max-width: $mobile-bp) {
+      padding: 12px 0 12px 16px;
+    }
   }
   .spoiler-text {
     font-size: 18px;
     line-height: 26px;
     color: $black;
+    @media screen and (max-width: $mobile-bp) {
+      font-size: 12px;
+      line-height: 18px;
+    }
   }
   &:hover {
     .spoiler-icon {
