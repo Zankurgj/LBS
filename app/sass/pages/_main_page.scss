@@ -31,6 +31,9 @@
   left: 0;
   padding: 16px 29px;
   @media screen and (max-width: $mobile-bp) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
     background: $white;
     width: 100%;
@@ -46,6 +49,24 @@
     @media screen and (max-width: $mobile-bp) {
       width: 120px;
     }
+  }
+}
+.btn-header--mobile {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  min-width: auto;
+  padding: 2px 14px;
+  transition: all $base-duration $base-timing;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 20px;
+  &.btn-header--mobile--show {
+    visibility: visible;
+    opacity: 1;
+  }
+  @media screen and (max-width: $mobile-bp) {
+    display: block;
   }
 }
 .head-block-text-inner {

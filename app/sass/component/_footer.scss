@@ -13,6 +13,8 @@
     flex-direction: column;
     align-items: center;
     padding: 26px 20px 40px 20px;
+    background-position: right center;
+    background-image: url('../images/dest/bird.svg');
   }
 }
 .mp-footer-about {
@@ -56,7 +58,7 @@
   letter-spacing: -0.31px;
   margin-right: 40px;
   &:hover {
-    color: rgba($color: #d1d1d1, $alpha: 0.8);
+    color: $white;
   }
   @media screen and (max-width: $mobile-bp) {
     font-size: 12px;
@@ -160,7 +162,7 @@
     margin-right: 0;
   }
   &:hover {
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 .mp-footer-contacts-social-item--fb {

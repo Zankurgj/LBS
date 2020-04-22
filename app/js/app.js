@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+  getScroll();
   $('.features1-slider').slick({
     infinite: true,
     slidesToShow: 3,
@@ -279,4 +280,22 @@ const closePopup = () => {
   const popup = $('#popup-wrapper');
   popup.find('.js-show-popup').removeClass('js-show-popup');
   popup.fadeOut(500);
+};
+
+const getScroll = () => {
+  const elementHeight = document.querySelector('.head-block-text').offsetHeight;
+  const buttonEl = document.querySelector('.btn-header--mobile');
+  window.onscroll = function () {
+    if (
+      Math.round(
+        this.pageYOffset ||
+          (document.documentElement && document.documentElement.scrollTop) ||
+          (document.body && document.body.scrollTop)
+      ) >= elementHeight
+    ) {
+      buttonEl.classList.add('btn-header--mobile--show');
+    } else {
+      buttonEl.classList.remove('btn-header--mobile--show');
+    }
+  };
 };
