@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: true,
+          variableWidth: true,
           infinite: false,
           arrows: false,
         },
@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesToScroll: 1,
     dots: false,
     arrows: false,
-    centerMode: true,
     mobileFirst: true,
+    variableWidth: true,
     responsive: [
       {
         breakpoint: 812,
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          centerMode: true,
+          variableWidth: true,
           infinite: false,
           arrows: false,
         },
@@ -253,14 +253,16 @@ const clearTest = () => {
 };
 
 // help
-const playHeadVideo = (btn) => {
-  btn.classList.add('jsHide');
-  document.querySelector('#headVideo').play();
-};
-const stopHeadVideo = () => {
-  const btn = document.querySelector('#playHeadBtn');
-  btn.classList.remove('jsHide');
+const openPopupVideo = () => {
   document.querySelector('#headVideo').pause();
+  $('#popup-wrapper-video').fadeIn(500);
+  document.querySelector('#popup-video').play();
+};
+
+const closePopupVideo = () => {
+  document.querySelector('#popup-video').pause();
+  document.querySelector('#headVideo').play();
+  $('#popup-wrapper-video').fadeOut(500);
 };
 
 const spoilerToogle = (el) => {
@@ -283,19 +285,22 @@ const closePopup = () => {
 };
 
 const getScroll = () => {
-  const elementHeight = document.querySelector('.head-block-text').offsetHeight;
-  const buttonEl = document.querySelector('.btn-header--mobile');
-  window.onscroll = function () {
-    if (
-      Math.round(
-        this.pageYOffset ||
-          (document.documentElement && document.documentElement.scrollTop) ||
-          (document.body && document.body.scrollTop)
-      ) >= elementHeight
-    ) {
-      buttonEl.classList.add('btn-header--mobile--show');
-    } else {
-      buttonEl.classList.remove('btn-header--mobile--show');
-    }
-  };
+  const element = document.querySelector('.head-block-text');
+  if (element) {
+    const elementHeight = element.offsetHeight;
+    const buttonEl = document.querySelector('.btn-header--mobile');
+    window.onscroll = function () {
+      if (
+        Math.round(
+          this.pageYOffset ||
+            (document.documentElement && document.documentElement.scrollTop) ||
+            (document.body && document.body.scrollTop)
+        ) >= elementHeight
+      ) {
+        buttonEl.classList.add('btn-header--mobile--show');
+      } else {
+        buttonEl.classList.remove('btn-header--mobile--show');
+      }
+    };
+  }
 };

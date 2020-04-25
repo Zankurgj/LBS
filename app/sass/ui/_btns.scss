@@ -96,6 +96,10 @@ input[type='submit'] {
   &:hover {
     color: $accent;
   }
+  .svg-icon {
+    width: 6px;
+    height: 9px;
+  }
 }
 .btn--header-circle--profile {
   background-position: center;
@@ -295,7 +299,7 @@ input[type='submit'] {
   .spoiler-desc {
     font-size: 18px;
     line-height: 26px;
-    color: $black;
+    color: $deepblack;
     @media screen and (max-width: $mobile-bp) {
       font-size: 12px;
       line-height: 18px;
@@ -363,5 +367,34 @@ input[type='submit'] {
   }
   &:hover {
     opacity: 0.8;
+  }
+}
+.btn--close-popup--video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  background-color: $gray1;
+  border: 2px solid $white;
+  border-radius: 50%;
+  color: $black;
+  span {
+    @extend .visually-hidden;
+  }
+  &:hover {
+    color: $accent;
+  }
+  .svg-icon {
+    width: 14px;
+    height: 14px;
+  }
+  @media screen and (max-width: $mobile-bp) {
+    width: 28px;
+    height: 28px;
+    .svg-icon {
+      width: 12px;
+      height: 12px;
+    }
   }
 }

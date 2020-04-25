@@ -48,21 +48,53 @@
         <button
           class="btn--play btn--play--head-block-video"
           id="playHeadBtn"
-          onclick="playHeadVideo(this)"
+          onclick="openPopupVideo()"
         >
           <span class="visually-hidden">Старт</span>
         </button>
-        <div class="head-block-video-content-wrapper" onclick="stopHeadVideo()">
+        <div class="head-block-video-content-wrapper">
           <video
             class="head-block-video-content"
             id="headVideo"
             loop
             muted
             poster="./images/dest/image-video.jpg"
+            autoplay
           >
             <!-- <source src="./video/sample_video.mp4" type="video/webm" /> -->
             <source src="./video/sample_video.mp4" type="video/mp4" />
           </video>
+          <script>
+            document.querySelector('#headVideo').play();
+          </script>
+
+          <div class="popup-wrapper" id="popup-wrapper-video">
+            <div class="popup-video-container">
+              <div class="popup-overlay" onclick="closePopupVideo()"></div>
+              <div class="popup-video-wrapper" id="popup-video-mp">
+                <button
+                  class="btn--close-popup--video"
+                  onclick="closePopupVideo()"
+                >
+                  <svg class="svg-icon">
+                    <use
+                      xlink:href="./images/sprites/svg/sprite.symbol.svg#close-video"
+                    ></use>
+                  </svg>
+                  <span>закрыть</span>
+                </button>
+                <video
+                  class="popup-video"
+                  id="popup-video"
+                  loop
+                  poster="./images/dest/image-video.jpg"
+                >
+                  <!-- <source src="./video/sample_video.mp4" type="video/webm" /> -->
+                  <source src="./video/sample_video.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -355,7 +387,7 @@
                 data-popup-index="popup4"
               >
                 <div class="smi-slider-item-title-img">
-                  <img src="./images/dest/smi1.png" alt="smi image" />
+                  <img src="./images/dest/smi1.svg" alt="smi image" />
                 </div>
                 <p class="smi-slider-item-text">
                   Я прошла курс лечения от аэрофобии и слетала в Липецк и
@@ -371,7 +403,7 @@
                 data-popup-index="popup4"
               >
                 <div class="smi-slider-item-title-img">
-                  <img src="./images/dest/smi2.png" alt="smi image" />
+                  <img src="./images/dest/smi2.svg" alt="smi image" />
                 </div>
                 <p class="smi-slider-item-text">
                   «Мне бы в небо». — фильм телеканала Москва-24
@@ -386,7 +418,7 @@
                 data-popup-index="popup4"
               >
                 <div class="smi-slider-item-title-img">
-                  <img src="./images/dest/smi3.png" alt="smi image" />
+                  <img src="./images/dest/smi3.svg" alt="smi image" />
                 </div>
                 <p class="smi-slider-item-text">
                   The latest trend in medicine — virtual reality
@@ -401,7 +433,7 @@
                 data-popup-index="popup4"
               >
                 <div class="smi-slider-item-title-img">
-                  <img src="./images/dest/smi2.png" alt="smi image" />
+                  <img src="./images/dest/smi2.svg" alt="smi image" />
                 </div>
                 <p class="smi-slider-item-text">
                   «Мне бы в небо». — фильм телеканала Москва-24
@@ -640,7 +672,13 @@
         <div class="history-slider-wrapper slider-wrapper">
           <div class="history-slider">
             <div class="history-slider-item-wrapper">
-              <div class="history-slider-item">
+              <div
+                class="history-slider-item"
+                tabindex="0"
+                role="button"
+                onclick="showPopup(this)"
+                data-popup-index="popup5"
+              >
                 <div class="history-slider-item-title-img">
                   <img src="./images/dest/client1.png" alt="smi image" />
                 </div>
@@ -655,7 +693,13 @@
             </div>
 
             <div class="history-slider-item-wrapper">
-              <div class="history-slider-item">
+              <div
+                class="history-slider-item"
+                tabindex="0"
+                role="button"
+                onclick="showPopup(this)"
+                data-popup-index="popup5"
+              >
                 <div class="history-slider-item-title-img">
                   <img src="./images/dest/client2.png" alt="smi image" />
                 </div>
@@ -671,7 +715,13 @@
             </div>
 
             <div class="history-slider-item-wrapper">
-              <div class="history-slider-item">
+              <div
+                class="history-slider-item"
+                tabindex="0"
+                role="button"
+                onclick="showPopup(this)"
+                data-popup-index="popup5"
+              >
                 <div class="history-slider-item-title-img">
                   <img src="./images/dest/client1.png" alt="smi image" />
                 </div>
@@ -686,7 +736,13 @@
             </div>
 
             <div class="history-slider-item-wrapper">
-              <div class="history-slider-item">
+              <div
+                class="history-slider-item"
+                tabindex="0"
+                role="button"
+                onclick="showPopup(this)"
+                data-popup-index="popup5"
+              >
                 <div class="history-slider-item-title-img">
                   <img src="./images/dest/client2.png" alt="smi image" />
                 </div>
@@ -895,7 +951,7 @@
         <div class="popup-inner" id="popup4">
           <div class="popup-head">
             <div class="popup-img-wrapper">
-              <img src="./images/dest/smi1.png" alt="app logo" />
+              <img src="./images/dest/smi1.svg" alt="app logo" />
             </div>
             <h2 class="popup-title">
               The latest trend in medicine — virtual reality
@@ -914,6 +970,30 @@
               приложение одним из 10 лучших подарков путешественнику. SkyGuru
               используют более 150 000 человек из 114 стран мира.
             </p>
+          </div>
+        </div>
+
+        <div class="popup-inner" id="popup5">
+          <div class="popup-head">
+            <div class="popup-img-wrapper">
+              <img src="./images/dest/client2.png" alt="app logo" />
+            </div>
+            <h2 class="popup-title">
+              Теперь я могу наслаждаться полётом, пейзажами из окна и крепким
+              сном в самолёте!
+            </h2>
+          </div>
+          <div class="popup-text">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto
+              consequuntur esse unde tempora, corporis optio fugiat
+              reprehenderit hic dolorem repudiandae quae soluta deserunt itaque
+              vel totam eveniet praesentium tenetur blanditiis?
+            </p>
+            <div class="subtitle popup-subtitle">
+              <p>Ирина, 37 лет</p>
+              <p>Групповой курс</p>
+            </div>
           </div>
         </div>
       </div>
