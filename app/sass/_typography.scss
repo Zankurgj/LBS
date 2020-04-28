@@ -54,16 +54,16 @@ h4 {
 p {
   margin: 0;
 }
-input,
-textarea {
-  outline: none;
-  &:focus:required:invalid {
-    border-color: red;
-  }
-  &:required:valid {
-    border-color: green;
-  }
-}
+// input,
+// textarea {
+//   outline: none;
+//   &:focus:required:invalid {
+//     border-color: red;
+//   }
+//   &:required:valid {
+//     border-color: green;
+//   }
+// }
 label {
   margin: 0;
 }

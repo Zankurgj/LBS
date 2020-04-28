@@ -126,11 +126,24 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   startAppend();
 });
+
+// Тест
 // стартовый индекс
 let amountQestionsIndex = 0;
 // данные с бека
 const qestionsArr = [
-  { title: 'title1', q: ['question1', 'question2', 'question3'] },
+  {
+    title: 'Когда вы в последний раз летали на самолёте?',
+    q: [
+      'Более 5 лет назад',
+      '1-2 года назад',
+      'Более 10 лет назад',
+      'Менее 1 месяца назад',
+      '3-5 лет назад',
+      '1-5 месяцев назад',
+      '6-12 месяцев назад',
+    ],
+  },
   { title: 'title2', q: ['question1', 'question2', 'question3'] },
   { title: 'title3', q: ['question1', 'question2', 'question3'] },
   { title: 'title4', q: ['question1', 'question2', 'question3'] },
@@ -139,7 +152,8 @@ const qestionsArr = [
 ];
 
 const startAppend = () => {
-  if (document.querySelector(`.test-container`)) {
+  if (document.querySelector(`.main-test-container`)) {
+    setCounter();
     // проверяем наличие прохождения теста
     const storage = JSON.parse(localStorage.getItem('test'));
     if (!storage) {
@@ -166,7 +180,8 @@ const findIndex = () => {
 
 // добавление шаблона
 const appendElement = (index) => {
-  const container = document.querySelector(`.test-container`);
+  changeCounter(index);
+  const container = document.querySelector(`.main-test-container`);
   container.innerHTML = ``;
   amountQestionsIndex = index;
   container.appendChild(
@@ -185,18 +200,17 @@ const setTemplate = (data) => {
   if (data) {
     template = questionsTemplate(data);
   } else {
-    template = endTestTemplate();
+    window.location.href = '/test-end.html';
   }
   return template;
 };
+
 // шаблоны
-const questionsTemplate = (data) => `<h1>${data.title}</h1>
-<form onsubmit="getFormData();return false" id="qForm">
+const questionsTemplate = (data) => `
+<h3 class="main-test-title">${data.title}</h3>
   ${questions(data)} 
-<button type="submit" class="btn--primary"> Ответить </button>
-<a href="./index.html" class="btn btn--primary">На главную</a>
-</form>
 `;
+
 const endTestTemplate = () => `
 <p>Тест завершен</p>
 <a href="./index.html" class="btn btn--primary">На главную</a>
@@ -211,15 +225,55 @@ const questions = (data) => {
     id="question${i}"
     name="question"
     value="answer${i}"
-    class="btn--radio btn--radio--label"
+    class="btn--radio--nolabel"
+    onchange="onShowNextBtn()"
   />
   <label for="question${i}">${data.q[i]}</label> `;
   }
   return question;
 };
 
-// обработка данных формы
-const getFormData = () => {
+// вспомогательные функции
+const onPrewPage = () => {
+  if (amountQestionsIndex > 0) {
+    appendElement(amountQestionsIndex - 1);
+  } else {
+    window.history.back();
+  }
+};
+const onShowNextBtn = () => {
+  const mobileBp = 812;
+  const windowWidth = window.innerWidth;
+  if (windowWidth <= mobileBp) {
+    const btn = document.querySelector('.btn--next-page');
+    btn.classList.add('btn--next-page--show');
+  }
+};
+const onHideNextBtn = () => {
+  const mobileBp = 812;
+  const windowWidth = window.innerWidth;
+  if (windowWidth <= mobileBp) {
+    const btn = document.querySelector('.btn--next-page');
+    btn.classList.remove('btn--next-page--show');
+  }
+};
+// меняем счетчик страниц
+const changeCounter = (index) => {
+  const currentPageContainer = document.querySelector(
+    '.main-test-counter-current'
+  );
+  currentPageContainer.innerHTML = `${index + 1}`;
+};
+// Устанавливаем счетчик страниц
+const setCounter = () => {
+  const totalCounter = qestionsArr.length;
+  const totalCounterPageContainer = document.querySelector(
+    '.main-test-counter-total'
+  );
+  totalCounterPageContainer.innerHTML = `${totalCounter + 1}`;
+};
+
+const onNextPeage = () => {
   const form = document.getElementById('qForm');
   const radios = form.querySelectorAll('input[type="radio"]');
   radios.forEach((item) => {
@@ -230,18 +284,9 @@ const getFormData = () => {
       }
       obj[amountQestionsIndex] = item.value;
       localStorage.setItem('test', JSON.stringify(obj));
-      nextPeage();
     }
   });
-};
-
-// вспомогательные функции
-const prewPage = () => {
-  if (amountQestionsIndex > 0) {
-    appendElement(amountQestionsIndex - 1);
-  }
-};
-const nextPeage = () => {
+  onHideNextBtn();
   if (amountQestionsIndex < qestionsArr.length) {
     appendElement(amountQestionsIndex + 1);
   }
@@ -251,15 +296,21 @@ const clearTest = () => {
   localStorage.clear();
   startAppend();
 };
+const submitStartForm = () => {
+  window.location.href = '/test.html';
+};
+// test end
 
 // help
 const openPopupVideo = () => {
+  stopScroll();
   document.querySelector('#headVideo').pause();
   $('#popup-wrapper-video').fadeIn(500);
   document.querySelector('#popup-video').play();
 };
 
 const closePopupVideo = () => {
+  renewScroll();
   document.querySelector('#popup-video').pause();
   document.querySelector('#headVideo').play();
   $('#popup-wrapper-video').fadeOut(500);
@@ -272,6 +323,7 @@ const spoilerToogle = (el) => {
 };
 
 const showPopup = (el) => {
+  stopScroll();
   const popup = $('#popup-wrapper');
   const data = $(el).data('popup-index');
   $(`#${data}`).addClass('js-show-popup');
@@ -279,9 +331,22 @@ const showPopup = (el) => {
 };
 
 const closePopup = () => {
+  renewScroll();
   const popup = $('#popup-wrapper');
   popup.find('.js-show-popup').removeClass('js-show-popup');
   popup.fadeOut(500);
+};
+
+const stopScroll = () => {
+  $('html, body').css({
+    overflow: 'hidden',
+  });
+};
+
+const renewScroll = () => {
+  $('html, body').css({
+    overflow: 'auto',
+  });
 };
 
 const getScroll = () => {

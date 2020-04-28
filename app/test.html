@@ -11,23 +11,16 @@
   </head>
 
   <body>
-    <header class="main-header">
+    <header class="header-main--lk">
       <a href="#" class="btn btn--header-circle btn--header-circle--back">
-        <svg
-          fill="none"
-          height="9"
-          viewBox="0 0 6 9"
-          width="6"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="m5.04986.290325c.38665.386649.38665 1.014255 0 1.400905l-2.63463 2.63462 2.63463 2.63463c.38665.38665.38665 1.01425 0 1.4009s-1.01425.38665-1.4009 0l-3.37524-3.37524c-.365168-.36516-.3651679-.95634 0-1.32058l3.37524-3.375235c.38665-.3866481 1.01425-.3866481 1.4009 0z"
-            fill="currentColor"
-          />
+        <svg class="svg-icon">
+          <use
+            xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-prev"
+          ></use>
         </svg>
-        <span class="visually-hidden">Назат</span>
+        <span class="visually-hidden">назад</span>
       </a>
-      <a href="#" class="main-header-logo">
+      <a href="#" class="header-main--lk-logo">
         <img src="./images/dest/Group.svg" alt="logo" />
         <span class="visually-hidden">Главная</span>
       </a>
@@ -36,9 +29,109 @@
       </a>
     </header>
 
-    <section class="form-container">
-      <div class="test-container test-form-field"></div>
+    <section class="page--main-test">
+      <div class="container container--page--main-test">
+        <div class="main-test-counter">
+          <span class="main-test-counter-current"></span> из
+          <span class="main-test-counter-total"></span>
+        </div>
+        <div id="qForm">
+          <div class="main-test-container"></div>
+          <div class="btn-wrapper main-test-btn-wrapper">
+            <button type="button" onclick="onPrewPage()" class="btn--prew-page">
+              <svg class="svg-icon">
+                <use
+                  xlink:href="./images/sprites/svg/sprite.symbol.svg#forward"
+                ></use>
+              </svg>
+              Назад
+            </button>
+            <button class="btn--primary btn--next-page" onclick="onNextPeage()">
+              Далее
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <footer class="mp-footer-block container-fluid">
+      <div class="mp-footer-about">
+        <p>
+          Центр Алексея Герваш «Летаем без страха» — эффективное лечение
+          аэрофобии. Изучаем и устраняем страх полёта с 2008 года.
+        </p>
+      </div>
+      <div class="mp-footer-contacts mp-footer-contacts--mobile">
+        <div class="mp-footer-contacts-social">
+          <div class="mp-footer-contacts-social-item-wrapper">
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--fb"
+              ><span>facebook</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--inst"
+              ><span>instagram</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--vk"
+              ><span>vkontakte</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--tw"
+              ><span>twitter</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <nav class="mp-footer-nav">
+        <ul class="mp-footer-nav-item-wrapper">
+          <li><a href="#" class="mp-footer-nav-item">О центре</a></li>
+          <li>
+            <a href="#" class="mp-footer-nav-item">Истории выпускников</a>
+          </li>
+          <li>
+            <a href="#" class="mp-footer-nav-item">Гарантии результата</a>
+          </li>
+          <li><a href="#" class="mp-footer-nav-item">Наша команда</a></li>
+          <li><a href="#" class="mp-footer-nav-item">База знаний</a></li>
+          <li><a href="#" class="mp-footer-nav-item">СМИ о нас</a></li>
+          <li><a href="#" class="mp-footer-nav-item">Приложения</a></li>
+          <li><a href="#" class="mp-footer-nav-item">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="mp-footer-contacts mp-footer-contacts-desktop">
+        <a href="" class="mp-footer-contacts-phone">+7 (495) 649-87-62</a>
+        <p class="mp-footer-contacts-social-title">Перезвоните мне</p>
+        <div class="mp-footer-contacts-social">
+          <div class="mp-footer-contacts-social-item-wrapper">
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--fb"
+              ><span>facebook</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--inst"
+              ><span>instagram</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--vk"
+              ><span>vkontakte</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--tw"
+              ><span>twitter</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
     <script src="js/app.min.js"></script>
   </body>
 </html>
