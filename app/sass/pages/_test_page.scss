@@ -542,6 +542,10 @@
 
 .curator-field-item {
   margin-right: 48px;
+  @media screen and (max-width: $tablet-bp) {
+    margin-right: 0;
+    margin-bottom: 24px;
+  }
   @media screen and (max-width: $mobile-bp) {
     margin-right: 0;
     margin-bottom: 8px;
@@ -551,7 +555,12 @@
   }
 }
 .btn-wrapper--curator-field {
-  flex-direction: column;
+  @media screen and (max-width: $tablet-bp) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: $mobile-bp) {
+    flex-direction: column;
+  }
 }
 .page-format-list {
   display: flex;

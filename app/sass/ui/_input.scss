@@ -37,7 +37,7 @@
       transform: translate(0, -12px) scale(0.75);
     }
   }
-  &:focus:required:invalid,
+  // &:focus:required:invalid,
   &.text-input--error {
     border: 1px solid #ff5050;
     + .text-input-label .text-input-err {
@@ -78,5 +78,85 @@
     visibility: hidden;
     opacity: 0;
     transition: all ease-in 0.1s;
+  }
+}
+
+.simple-select-wrapper {
+  position: relative;
+}
+.simple-select {
+  width: 100%;
+  border-radius: 4px;
+  padding: 20px 25px 8px 16px;
+  border: 2px solid $gray2;
+  transition: all ease-in 0.1s;
+  font-size: 16px;
+  line-height: 24px;
+  color: $black;
+  &:focus {
+    outline: none;
+    border-color: $accent;
+    & + .simple-select-label::before {
+      background-image: url("data:image/svg+xml,%3Csvg fill='none' height='6' viewBox='0 0 9 6' width='9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m.291302.289986c.386649-.3866485 1.014248-.3866485 1.400898 0l2.63463 2.634624 2.63463-2.634624c.38664-.3866482 1.01425-.3866482 1.4009 0 .38665.386649.38665 1.014254 0 1.400904l-3.37524 3.37523c-.36517.36517-.95635.36517-1.32058 0l-3.375238-3.37523c-.3866485-.38665-.3866485-1.014255 0-1.400904z' fill='%232462F2'/%3E%3C/svg%3E");
+      transform: translate(0, -50%) rotate(180deg);
+    }
+  }
+}
+.simple-select-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  cursor: default;
+  pointer-events: none;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 11px;
+  color: $sec2;
+  .simple-select-ph {
+    position: absolute;
+    left: 16px;
+    top: 4px;
+    line-height: 24px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 11px;
+    height: 7px;
+    right: 16px;
+    top: 50%;
+    transform: translate(0, -50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' height='6' viewBox='0 0 9 6' width='9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m.291302.289986c.386649-.3866485 1.014248-.3866485 1.400898 0l2.63463 2.634624 2.63463-2.634624c.38664-.3866482 1.01425-.3866482 1.4009 0 .38665.386649.38665 1.014254 0 1.400904l-3.37524 3.37523c-.36517.36517-.95635.36517-1.32058 0l-3.375238-3.37523c-.3866485-.38665-.3866485-1.014255 0-1.400904z' fill='%2398a4b2'/%3E%3C/svg%3E");
+    transition: all ease-in 0.1s;
+  }
+}
+.simple-textarea {
+  border-radius: 4px;
+  background-color: #f5f5f7;
+  padding: 16px;
+  border: 1px solid #f5f5f7;
+  resize: none;
+  color: $black;
+  font-size: 16px;
+  line-height: 24px;
+  transition: all ease-in 0.1s;
+  &:focus,
+  &:valid {
+    outline: none;
+    background-color: $white;
+    border: 1px solid $gray2;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+  &::placeholder {
+    font-size: inherit;
+    line-height: inherit;
+    color: $sec2;
   }
 }

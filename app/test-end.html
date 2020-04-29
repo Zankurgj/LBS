@@ -283,7 +283,12 @@
               ></use>
             </svg>
           </a>
-          <button class="btn--secondary btn--secondary--end__test">
+          <button
+            class="btn--secondary btn--secondary--end__test"
+            onclick="showPopup(this)"
+            data-popup-index="popup1"
+            type="button"
+          >
             Обсудить со специалистом
           </button>
         </div>
@@ -311,14 +316,13 @@
                 required
               />
               <label for="name" class="text-input-label">
-                <span class="text-input-ph">Промокод</span>
+                <span class="text-input-ph">Ваше имя</span>
                 <span class="text-input-err">Обязательное поле</span>
               </label>
             </div>
             <div class="text-input-wrapper text-input-wrapper--test-resalt">
               <input
-                type="number"
-                inputmode="numeric"
+                type="tel"
                 id="phone"
                 class="text-input text-input--test-resalt"
                 required
@@ -328,6 +332,41 @@
                 <span class="text-input-err">Обязательное поле</span>
               </label>
             </div>
+            <div class="test-resalt-popup-date">
+              <span class="test-resalt-popup-date-title"
+                >Удобное время для связи</span
+              >
+              <div
+                class="simple-select-wrapper simple-select-wrapper--test-resalt-date"
+              >
+                <input
+                  class="simple-select"
+                  id="result-date"
+                  value="10 апреля"
+                />
+                <label for="result-date" class="simple-select-label">
+                  <span class="simple-select-ph">Дата</span>
+                </label>
+              </div>
+              <div
+                class="simple-select-wrapper simple-select-wrapper--test-resalt-time"
+              >
+                <input
+                  class="timepicker timepicker--test-resalt simple-select"
+                  id="result-time"
+                />
+                <label for="result-time" class="simple-select-label">
+                  <span class="simple-select-ph">Время</span>
+                </label>
+              </div>
+            </div>
+            <textarea
+              class="simple-textarea simple-textarea--test-resalt"
+              name="comment"
+              id="comment-ressult"
+              placeholder="Комменатрий (необязательно)"
+              required
+            ></textarea>
             <button
               type="submit"
               class="btn--primary btn--primary--test-resalt"
@@ -418,5 +457,20 @@
       </div>
     </footer>
     <script src="js/app.min.js"></script>
+    <script>
+      // init timepicker
+      $('.timepicker').timepicker({
+        timeFormat: 'H:mm',
+        interval: 30,
+        minTime: '10',
+        maxTime: '6:00pm',
+        defaultTime: '11',
+        startTime: '10:00',
+        dynamic: false,
+        dropdown: true,
+        scrollbar: true,
+        zindex: 1000,
+      });
+    </script>
   </body>
 </html>
