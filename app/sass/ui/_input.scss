@@ -1,5 +1,11 @@
 .text-input-wrapper {
   position: relative;
+  @media screen and (max-width: $mobile-bp) {
+    .text-input-ph,
+    .text-input {
+      font-size: 18px;
+    }
+  }
 }
 
 .text-input {
@@ -25,12 +31,14 @@
     background-color: $white;
   }
   &:focus,
-  &:valid {
+  &:valid,
+  &.text-input--focus {
     + .text-input-label .text-input-ph {
       transform: translate(0, -12px) scale(0.75);
     }
   }
-  &:focus:required:invalid {
+  &:focus:required:invalid,
+  &.text-input--error {
     border: 1px solid #ff5050;
     + .text-input-label .text-input-err {
       visibility: visible;

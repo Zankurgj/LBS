@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>LBS</title>
+    <meta name="description" content="LBS" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <meta property="og:image" content="img/dest/preview.jpg" />
+    <link rel="stylesheet" href="css/app.min.css" />
+  </head>
+
+  <body>
+    <header class="header-main--lk">
+      <a href="#" class="btn btn--header-circle btn--header-circle--back">
+        <svg class="svg-icon">
+          <use
+            xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-prev"
+          ></use>
+        </svg>
+        <span class="visually-hidden">назад</span>
+      </a>
+      <a href="#" class="header-main--lk-logo">
+        <img src="./images/dest/Group.svg" alt="logo" />
+        <span class="visually-hidden">Главная</span>
+      </a>
+      <a href="#" class="btn btn--header-circle btn--header-circle--profile">
+        <span class="visually-hidden">Личный кабинет</span>
+      </a>
+    </header>
+
+    <section class="page--format">
+        <form action="" class="test-form">
+          <div class="container container--page-format">
+            <div class="page-format-header">
+              <h1 class="page-format-header-title">Формат курса</h1>
+              <p class="page-format-header-description">
+                На основании результатов теста автоматически предлагаем вам
+                следующий список тем для изучения
+              </p>
+              <fieldset class="page-format-field">
+                <legend class="page-format-legend page-format-legend--hide-mobile">Выберите формат курса</legend>
+                <div class="btn-wrapper btn-wrapper--format-course">
+                  <input
+                    type="radio"
+                    id="formatInPerson"
+                    name="format"
+                    value="formatInPerson"
+                    class="btn--toogle--large"
+                    checked
+                  />
+                  <label for="formatInPerson"> Очно </label>
+                  <input
+                    type="radio"
+                    id="formatInAbsentia"
+                    name="format"
+                    value="formatInPerson"
+                    class="btn--toogle--large"
+                  />
+                  <label for="formatInAbsentia">
+                    Заочно
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+          <fieldset class="page-format-item-wrapper page-format-item-wrapper--curator-field">
+            <legend class="page-format-legend">Куратор</legend>
+            <div class="btn-wrapper btn-wrapper--curator-field">
+              <input
+                type="radio"
+                id="curatoInPerson"
+                name="curator"
+                value="curatoInPerson"
+                class="btn--radio btn--radio--label"
+                checked
+              />
+              <label for="curatoInPerson" class="curator-field-item">Самостоятельно</label>
+              <input
+                type="radio"
+                id="curatorWithСurator"
+                name="curator"
+                value="curatorWithСurator"
+                class="btn--radio btn--radio--label"
+              />
+              <label for="curatorWithСurator" class="curator-field-item"> С куратором</label>
+              <input
+                type="radio"
+                id="curatorVip"
+                name="curator"
+                value="curatorVip"
+                class="btn--radio btn--radio--label"
+              />
+              <label for="curatorVip" class="curator-field-item"> С Алексеем Герваш</label>
+            </div>
+          </fieldset>
+          <fieldset class="page-format-item-wrapper page-format-item-wrapper--list-field">
+            <legend class="page-format-legend">Обязательные материалы</legend>
+            <ul class="page-format-list">
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Панические атаки
+              </li>
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Панические атаки
+              </li>
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Взлет
+              </li>
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Взлет
+              </li>
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Посадка
+              </li>
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Посадка
+              </li>
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Перфекционизм
+              </li>
+              <li class="page-format-list-item page-format-list-item--checkicon">
+                Перфекционизм
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="page-format-item-wrapper page-format-item-wrapper--toogle-block">
+            <legend class="page-format-legend">Дополнительные материалы</legend>
+            <div class="page-format-toogle-wrapper">
+              <div class="page-format-toogle-text">
+                <div class="page-format-toogle-title">
+                  <span>Название в одну строку</span>
+                  <div class="tooltip-wrapper tooltip-wrapper--page-format">
+                    <div class="tooltip-icon tooltip-icon--page-format"></div>
+                    <div class="tooltip">
+                      <p>
+                        Страх полета является для меня определенной проблемой, я
+                        хочу от него избавиться и готов(а) потратить на это время,
+                        силы и деньги.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <span class="page-format-toogle-cost">4 440 ₽</span>
+              </div>
+              <input
+                type="checkbox"
+                id="cost1"
+                name="cost"
+                value="cost1"
+                class="btn--toogle-circle"
+              />
+              <label for="cost1"></label>
+            </div>
+            <div class="page-format-toogle-wrapper">
+              <div class="page-format-toogle-text">
+                <div class="page-format-toogle-title">
+                  <span>Название в одну строку</span>
+                  <div class="tooltip-wrapper tooltip-wrapper--page-format">
+                    <div class="tooltip-icon tooltip-icon--page-format"></div>
+                    <div class="tooltip">
+                      <p>
+                        Страх полета является для меня определенной проблемой, я
+                        хочу от него избавиться и готов(а) потратить на это время,
+                        силы и деньги.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <span class="page-format-toogle-cost">4 440 ₽</span>
+              </div>
+              <input
+                type="checkbox"
+                id="cost2"
+                name="cost"
+                value="cost2"
+                class="btn--toogle-circle"
+                checked
+              />
+              <label for="cost2"></label>
+            </div>
+            <div class="page-format-toogle-wrapper">
+              <div class="page-format-toogle-text">
+                <div class="page-format-toogle-title">
+                  <span>Название в одну строку</span>
+                  <div class="tooltip-wrapper tooltip-wrapper--page-format">
+                    <div class="tooltip-icon tooltip-icon--page-format"></div>
+                    <div class="tooltip">
+                      <p>
+                        Страх полета является для меня определенной проблемой, я
+                        хочу от него избавиться и готов(а) потратить на это время,
+                        силы и деньги.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <span class="page-format-toogle-cost">4 440 ₽</span>
+              </div>
+              <input
+                type="checkbox"
+                id="cost3"
+                name="cost"
+                value="cost3"
+                class="btn--toogle-circle"
+              />
+              <label for="cost3"></label>
+            </div>
+          </fieldset>
+          <div class="page-format-item-wrapper page-format-toogle page-format-toogle--submit">
+            <button class="promocode-link" onclick="showPopup(this)"
+            data-popup-index="popup1" type="button">
+              <img
+                src="./images/dest/promocode_icon.svg"
+                alt="promocode icon"
+                class="promocode-link-icon"
+              />
+              У меня есть промокод
+            </button>
+            <button type="submit" class="btn--primary btn--primary--page-format">
+              Оплатить 3 000 ₽
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <div class="popup-wrapper" id="popup-wrapper">
+      <div class="popup-overlay" onclick="closePopup()"></div>
+      <div class="popup-container--promocode">
+        <div class="popup-inner" id="popup1">
+          <button class="btn--close-popup" onclick="closePopup()">
+            <span>закрыть</span>
+          </button>
+          <h3 class="promocode-popup-title">Введите промокод</h3>
+            <form class="promocode-popup-form">
+              <div class="text-input-wrapper text-input-wrapper--promocode">
+                <input type="text" id="promocode" class="text-input text-input--promocode" required />
+                <label for="promocode" class="text-input-label">
+                  <span class="text-input-ph">Промокод</span>
+                  <span class="text-input-err">Обязательное поле</span>
+                </label>
+              </div>
+              <button type="submit" id="promocodeBtn" class="btn--primary btn--primary--promocode-popup" disabled>
+                Активировать
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <footer class="mp-footer-block container-fluid">
+        <div class="mp-footer-about">
+          <p>
+            Центр Алексея Герваш «Летаем без страха» — эффективное лечение
+            аэрофобии. Изучаем и устраняем страх полёта с 2008 года.
+          </p>
+        </div>
+        <div class="mp-footer-contacts mp-footer-contacts--mobile">
+          <div class="mp-footer-contacts-social">
+            <div class="mp-footer-contacts-social-item-wrapper">
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--fb"
+                ><span>facebook</span></a
+              >
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--inst"
+                ><span>instagram</span></a
+              >
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--vk"
+                ><span>vkontakte</span></a
+              >
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--tw"
+                ><span>twitter</span></a
+              >
+            </div>
+          </div>
+        </div>
+        <nav class="mp-footer-nav">
+          <ul class="mp-footer-nav-item-wrapper">
+            <li><a href="#" class="mp-footer-nav-item">О центре</a></li>
+            <li>
+              <a href="#" class="mp-footer-nav-item">Истории выпускников</a>
+            </li>
+            <li>
+              <a href="#" class="mp-footer-nav-item">Гарантии результата</a>
+            </li>
+            <li><a href="#" class="mp-footer-nav-item">Наша команда</a></li>
+            <li><a href="#" class="mp-footer-nav-item">База знаний</a></li>
+            <li><a href="#" class="mp-footer-nav-item">СМИ о нас</a></li>
+            <li><a href="#" class="mp-footer-nav-item">Приложения</a></li>
+            <li><a href="#" class="mp-footer-nav-item">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="mp-footer-contacts mp-footer-contacts-desktop">
+          <a href="" class="mp-footer-contacts-phone">+7 (495) 649-87-62</a>
+          <p class="mp-footer-contacts-social-title">Перезвоните мне</p>
+          <div class="mp-footer-contacts-social">
+            <div class="mp-footer-contacts-social-item-wrapper">
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--fb"
+                ><span>facebook</span></a
+              >
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--inst"
+                ><span>instagram</span></a
+              >
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--vk"
+                ><span>vkontakte</span></a
+              >
+              <a
+                href="#"
+                class="mp-footer-contacts-social-item mp-footer-contacts-social-item--tw"
+                ><span>twitter</span></a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/app.min.js"></script>
+    <script>
+      $('#promocode').on('input', function() {
+        var input = $(this);
+        var promocodeVal = input.val();
+        var btn = $('#promocodeBtn');
+        if (promocodeVal) {
+          btn.attr("disabled", false);
+        } else {
+          btn.attr("disabled", true);
+        }
+      });
+    </script>  
+  </body>
+</html>

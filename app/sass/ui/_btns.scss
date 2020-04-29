@@ -34,6 +34,12 @@ input[type='submit'] {
     color: rgba($color: #fff, $alpha: 0.7);
     background: #0e4bd8;
   }
+  &.btn--primary--disabled,
+  &:disabled {
+    background-color: $gray1;
+    color: $gray2;
+    cursor: default;
+  }
 }
 
 .btn--secondary {
@@ -96,6 +102,11 @@ input[type='submit'] {
     font-size: 18px;
     line-height: 20px;
     cursor: pointer;
+    @media screen and (max-width: $mobile-bp) {
+      font-size: 14px;
+      height: 48px;
+      min-width: 140px;
+    }
     &:hover {
       color: $accent;
     }
@@ -190,6 +201,21 @@ input[type='submit'] {
       box-shadow: 0px 0px 0px 1px #cfcfcf;
       &::before {
         border: 1px solid #cfcfcf;
+      }
+    }
+    @media screen and (max-width: $mobile-bp) {
+      font-size: 14px;
+      padding: 15px 20px 13px 20px;
+      height: auto;
+      &::before {
+        width: 16px;
+        height: 16px;
+        right: 16px;
+      }
+      &::after {
+        width: 6px;
+        height: 6px;
+        right: 21px;
       }
     }
   }
@@ -329,7 +355,7 @@ input[type='submit'] {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: contain;
-  background-image: url('../images/dest/google.png');
+  background-image: url('../images/dest/google.svg');
   span {
     @extend .visually-hidden;
   }
@@ -340,7 +366,7 @@ input[type='submit'] {
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: contain;
-  background-image: url('../images/dest/app-store.png');
+  background-image: url('../images/dest/app-store.svg');
   span {
     @extend .visually-hidden;
   }
@@ -356,7 +382,7 @@ input[type='submit'] {
     @extend .visually-hidden;
   }
   &:hover {
-    opacity: 0.8;
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' height='16' viewBox='0 0 15 16' width='15' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232462F2'%3E%3Cpath d='m13.9365.00018961-13.9365 14.80741039 1.06333 1.1298 13.93657-14.80743z'/%3E%3Cpath d='m15 14.8074-13.93652-14.8074-1.06333744 1.12978 13.93655744 14.80742z'/%3E%3C/g%3E%3C/svg%3E");
   }
 }
 

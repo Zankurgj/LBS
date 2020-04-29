@@ -264,10 +264,18 @@
           </div>
         </div>
         <div class="btn-wrapper btn-wrapper--end__test">
-          <button class="btn--text btn--text--grey btn--text--end__test">
+          <button
+            class="btn--text btn--text--grey btn--text--end__test"
+            onclick="showPopup(this)"
+            data-popup-index="popup1"
+            type="button"
+          >
             Обсудить результаты теста со специалистом
           </button>
-          <a href="#" class="btn btn--primary btn--primary--end__test">
+          <a
+            href="./test-format.html"
+            class="btn btn--primary btn--primary--end__test"
+          >
             Подобрать программу автоматически
             <svg class="svg-icon">
               <use
@@ -281,7 +289,56 @@
         </div>
       </div>
     </section>
-
+    <div class="popup-wrapper" id="popup-wrapper">
+      <div class="popup-overlay" onclick="closePopup()"></div>
+      <div class="popup-container--test-resalt">
+        <div class="popup-inner" id="popup1">
+          <button
+            class="btn--close-popup btn--close-popup--test-resalt"
+            onclick="closePopup()"
+          >
+            <span>закрыть</span>
+          </button>
+          <h3 class="test-resalt-popup-title">
+            Обсудить результаты теста <br />со специалистом
+          </h3>
+          <form class="test-resalt-popup-form">
+            <div class="text-input-wrapper text-input-wrapper--test-resalt">
+              <input
+                type="text"
+                id="name"
+                class="text-input text-input--test-resalt"
+                required
+              />
+              <label for="name" class="text-input-label">
+                <span class="text-input-ph">Промокод</span>
+                <span class="text-input-err">Обязательное поле</span>
+              </label>
+            </div>
+            <div class="text-input-wrapper text-input-wrapper--test-resalt">
+              <input
+                type="number"
+                inputmode="numeric"
+                id="phone"
+                class="text-input text-input--test-resalt"
+                required
+              />
+              <label for="phone" class="text-input-label">
+                <span class="text-input-ph">Номер телефона</span>
+                <span class="text-input-err">Обязательное поле</span>
+              </label>
+            </div>
+            <button
+              type="submit"
+              class="btn--primary btn--primary--test-resalt"
+              disabled
+            >
+              Отправить
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
     <footer class="mp-footer-block container-fluid">
       <div class="mp-footer-about">
         <p>
