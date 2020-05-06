@@ -92,13 +92,13 @@ input[type='submit'] {
     align-items: center;
     height: 72px;
     min-width: 170px;
-    background-color: #fff;
-    border: 1px solid #e6e6e6;
+    background-color: $white;
+    border: 1px solid $gray2;
     transition: $base-duration $base-timing;
-    color: #444;
+    color: $gray4;
     white-space: nowrap;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 18px;
     line-height: 20px;
     cursor: pointer;
@@ -134,7 +134,7 @@ input[type='submit'] {
     padding: 15px 20px 13px 20px;
     border-radius: 4px;
     box-shadow: 0px 0px 0px 1px #eaebef;
-    transition: $base-duration $base-timing;
+    transition: all $base-duration $base-timing;
     white-space: nowrap;
     font-weight: normal;
     font-size: 14px;
@@ -442,4 +442,87 @@ input[type='submit'] {
   &:hover {
     color: $accent;
   }
+}
+
+.btn--ellipse {
+  color: $accent;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 100px;
+  padding: 2px 8px;
+  border: 2px solid $accent;
+  @media screen and (max-width: $mobile-bp) {
+    border: 1px solid $accent;
+  }
+  &:hover {
+    color: rgba($color: $accent, $alpha: 0.8);
+  }
+}
+.btn--add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 46px;
+  background-color: $white;
+  border: 1px solid $gray2;
+  border-radius: 100px;
+  color: $accent;
+  font-size: 15px;
+  line-height: 20px;
+  &:hover {
+    color: rgba($color: $accent, $alpha: 0.8);
+  }
+  @media screen and (max-width: $mobile-bp) {
+    padding: 13px 30px;
+    font-size: 13px;
+  }
+}
+.btn--add-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.btn--add-small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $accent;
+  font-size: 15px;
+  line-height: 20px;
+  @media screen and (max-width: $mobile-bp) {
+    font-size: 13px;
+  }
+  &:hover {
+    color: rgba($color: $accent, $alpha: 0.8);
+  }
+}
+.btn--promocode-del {
+  color: $sec;
+  :hover {
+    color: $accent;
+  }
+}
+.btn--promocode-del-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.btn--ellipse-gray {
+  display: flex;
+  align-items: center;
+  padding: 6px 16px;
+  border: 1px solid $gray2;
+  border-radius: 100px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $sec;
+  &:hover {
+    color: $accent;
+    border-color: $accent;
+  }
+}
+.btn--ellipse-gray-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
 }

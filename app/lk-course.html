@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%;">
+  <head>
+    <meta charset="utf-8" />
+    <title>LBS</title>
+    <meta name="description" content="LBS" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <meta property="og:image" content="img/dest/preview.jpg" />
+    <link rel="stylesheet" href="css/app.min.css" />
+  </head>
+
+  <body class="lk-body">
+    <div class="lk-container">
+      <aside class="lk-sidebar">
+        <header class="lk-header">
+          <a href="#" class="lk-header-logo">
+            <img src="./images/dest/Group.svg" alt="logo" />
+            <span class="visually-hidden">Главная</span>
+          </a>
+          <div class="lk-sidebar-info-ava lk-sidebar-info-ava--mobile">
+            <div
+              class="lk-sidebar-info-ava-inner lk-sidebar-info-ava-inner--mobile"
+            >
+              <span>И</span>
+            </div>
+          </div>
+        </header>
+        <nav class="lk-sidebar-nav">
+          <ul class="lk-nav-item-container">
+            <li>
+              <a
+                href="#"
+                class="lk-sidebar-nav-item lk-sidebar-nav-item--active"
+              >
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#inscription"
+                  ></use>
+                </svg>
+                <span>Мои курсы</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#bookmark"
+                  ></use>
+                </svg>
+                <span>Мои бронирования</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#task"
+                  ></use>
+                </svg>
+                <span>Результаты тестов</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#promocode"
+                  ></use>
+                </svg>
+                <span>Промокоды</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <article class="lk-sidebar-info">
+          <div class="lk-sidebar-info-ava">
+            <div class="lk-sidebar-info-ava-inner">
+              <span>И</span>
+            </div>
+          </div>
+          <div class="lk-sidebar-info-name">Илья Горбунов</div>
+          <button class="btn--lk-sidebar-info">Выйти</button>
+        </article>
+      </aside>
+      <main class="lk-content">
+        <header class="lk-content-header">
+          <h4 class="lk-content-title">Мои курсы</h4>
+        </header>
+
+        <div class="lk-content-inner lk-content-inner-course">
+          <div class="container lk-course-container">
+            <div class="slider-wrapper lk-course-slider-wrapper">
+              <div class="lk-course-wrapper lk-course-slider">
+                <div class="lk-course-item-wrapper">
+                  <div
+                    class="lk-course-item"
+                    tabindex="0"
+                    role="button"
+                    onclick="showPopup(this)"
+                    data-popup-index="popup1"
+                  >
+                    <div
+                      class="lk-course-item-head"
+                      style="
+                        background-image: url(/images/dest/lk-course1.png);
+                      "
+                      data-rjs="2"
+                    >
+                      <span class="lk-course-item-tag">
+                        Обязательные
+                      </span>
+                    </div>
+                    <div class="lk-course-item-inner">
+                      <span class="lk-course-item-type">Очная программа</span>
+                      <h4 class="lk-course-item-title">Курс «Мой экипаж»</h4>
+                      <div class="lk-course-item-sub">
+                        <span class="lk-course-item-sub-text">15-18 фев.</span>
+                        <button
+                          class="btn--ellipse btn--ellipse--lk-course-item"
+                        >
+                          + Добавить в календарь
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lk-course-item-wrapper">
+                  <div
+                    class="lk-course-item"
+                    tabindex="0"
+                    role="button"
+                    onclick="showPopup(this)"
+                    data-popup-index="popup2"
+                  >
+                    <div
+                      class="lk-course-item-head"
+                      style="
+                        background-image: url(/images/dest/lk-course2.png);
+                      "
+                      data-rjs="2"
+                    >
+                      <span class="lk-course-item-tag">
+                        Обязательные
+                      </span>
+                    </div>
+                    <div class="lk-course-item-inner">
+                      <span class="lk-course-item-type">Очная программа</span>
+                      <h4 class="lk-course-item-title">Курс «Мой экипаж»</h4>
+                      <div class="lk-course-item-sub">
+                        <span class="lk-course-item-sub-text">
+                          Пройдено 44%.
+                        </span>
+                        <div class="lk-course-item-score-wrapper">
+                          <div
+                            class="lk-course-item-score-item"
+                            style="width: 44%;"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="lk-course-item-wrapper">
+                  <div
+                    class="lk-course-item"
+                    tabindex="0"
+                    role="button"
+                    onclick="showPopup(this)"
+                    data-popup-index="popup3"
+                  >
+                    <div
+                      class="lk-course-item-head"
+                      style="
+                        background-image: url(/images/dest/lk-course3.svg);
+                        background-size: auto;
+                      "
+                    >
+                      <span class="lk-course-item-tag">
+                        Обязательные
+                      </span>
+                    </div>
+                    <div class="lk-course-item-inner">
+                      <span class="lk-course-item-type">Очная программа</span>
+                      <h4 class="lk-course-item-title">Курс «Мой экипаж»</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <section class="lk-course-extras-container">
+              <h4 class="lk-course-extras-title">Extras</h4>
+              <div class="slider-wrapper extras-slider-wrapper">
+                <div class="extras-slider">
+                  <div class="extras-slider-item-wrapper">
+                    <div
+                      class="extras-slider-item extras-slider-item--1"
+                      style="
+                        background-image: url(/images/dest/extra-sl-img1.png);
+                      "
+                      data-rjs="2"
+                    >
+                      <h4 class="extras-slider-item-title">
+                        Sky Guru
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="extras-slider-item-wrapper">
+                    <div
+                      class="extras-slider-item extras-slider-item--2"
+                      style="
+                        background-image: url(/images/dest/extra-sl-img2.png);
+                      "
+                      data-rjs="2"
+                    >
+                      <h4 class="extras-slider-item-title">
+                        Ежедневник
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="extras-slider-item-wrapper">
+                    <div
+                      class="extras-slider-item extras-slider-item--3"
+                      style="
+                        background-image: url(/images/dest/extra-sl-img3.png);
+                      "
+                      data-rjs="2"
+                    >
+                      <h4 class="extras-slider-item-title">
+                        Консультация <br />Алексея
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="extras-slider-item-wrapper">
+                    <div
+                      class="extras-slider-item extras-slider-item--3"
+                      style="
+                        background-image: url(/images/dest/extra-sl-img3.png);
+                      "
+                      data-rjs="2"
+                    >
+                      <h4 class="extras-slider-item-title">
+                        Консультация <br />Алексея
+                      </h4>
+                    </div>
+                  </div>
+
+                  <div class="extras-slider-item-wrapper">
+                    <div
+                      class="extras-slider-item extras-slider-item--3"
+                      style="
+                        background-image: url(/images/dest/extra-sl-img3.png);
+                      "
+                      data-rjs="2"
+                    >
+                      <h4 class="extras-slider-item-title">
+                        Консультация <br />Алексея
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="slider-arrow slider-arrow--prev slider-arrow--prev-extra"
+                >
+                  <svg class="svg-icon">
+                    <use
+                      xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-prev"
+                    ></use>
+                  </svg>
+                  <span class="visually-hidden">предыдущий слайд</span>
+                </button>
+                <button
+                  class="slider-arrow slider-arrow--next slider-arrow--next-extra"
+                >
+                  <svg class="svg-icon">
+                    <use
+                      xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-next"
+                    ></use>
+                  </svg>
+                  <span class="visually-hidden">следующий слайд</span>
+                </button>
+              </div>
+            </section>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- popup -->
+    <div class="popup-wrapper" id="popup-wrapper">
+      <div class="popup-overlay" onclick="closePopup()"></div>
+      <div class="popup-container--course">
+        <div class="popup-inner--course" id="popup1">
+          <div class="popup-inner--course-wrapper">
+            <button
+              class="btn--close-popup btn--close-popup--course"
+              onclick="closePopup()"
+            >
+              <span>закрыть</span>
+            </button>
+            <div
+              class="popup-head--course"
+              style="background-image: url(/images/dest/course_popup_img1.png);"
+              data-rjs="2"
+            >
+              <h2 class="popup-title--course">Сопровождение <br />в полете</h2>
+            </div>
+            <div class="popup-text popup-text--course">
+              <p>
+                Вполне возможно, вы в шаге от существенного усиления аэрофобии.
+                Отказ от полета из-за страха, как правило, приводит к ухудшению
+                ситуации и серьезному увеличению стресса при следующей попытке
+                полететь куда-либо. Но решение есть, и даже в условиях цейтнота.
+                Центр «Летаем Без Страха» предоставляет эксклюзивную услугу -
+                сопровождение в предстоящем полете. С вами полетит Алексей
+                Герваш - профессиональный пилот и один из ведущих специалистов в
+                мире в области аэрофобии
+              </p>
+              <p>
+                Вы встретитесь за несколько часов до вылета, обсудите именно
+                вашу ситуацию ; Получите конкретные рекомендации по блокировке
+                адреналина (гормона страха) на физиологическом уровне: Разберете
+                какие ошибки в вашем мышлении создают страх и панику до и во
+                время полета и сможете скорректировать их: Получите много
+                полезных знаний об авиации, аэродинамике, авиационной
+                метеорологии, человеческом факторе и методах его уменьшения и
+                многом другом
+              </p>
+              <p>
+                Вы встретитесь за несколько часов до вылета, обсудите именно
+                вашу ситуацию ; Получите конкретные рекомендации по блокировке
+                адреналина (гормона страха) на физиологическом уровне: Разберете
+                какие ошибки в вашем мышлении создают страх и панику до и во
+                время полета и сможете скорректировать их: Получите много
+                полезных знаний об авиации, аэродинамике, авиационной
+                метеорологии, человеческом факторе и методах его уменьшения и
+                многом другом
+              </p>
+            </div>
+          </div>
+          <div class="btn-wrapper btn-wrapper--course">
+            <button class="btn--primary btn--primary--course">
+              Купить за 19 990 ₽
+            </button>
+          </div>
+        </div>
+
+        <div class="popup-inner--course" id="popup2">
+          <div class="popup-inner--course-wrapper">
+            <button
+              class="btn--close-popup btn--close-popup--course"
+              onclick="closePopup()"
+            >
+              <span>закрыть</span>
+            </button>
+            <div
+              class="popup-head--course"
+              style="background-image: url(/images/dest/course_popup_img1.png);"
+              data-rjs="2"
+            >
+              <h2 class="popup-title--course">Сопровождение <br />в полете</h2>
+            </div>
+            <div class="popup-text popup-text--course">
+              <p>
+                Далеко-далеко за словесными горами в стране гласных и согласных
+                живут, рыбные тексты. Прямо маленькая языком заголовок? То
+                приставка подпоясал знаках меня свое семь силуэт он осталось?
+                Букв одна даль она предупредила бросил запятых переписывается
+                рекламных использовало взобравшись раз собрал подпоясал рыбного
+                взгляд несколько ручеек, океана города? Страна большого
+                приставка до текстов журчит. Далеко-далеко за словесными горами
+                в стране гласных и согласных живут, рыбные тексты. Прямо
+                маленькая языком заголовок? То приставка подпоясал знаках меня
+                свое семь силуэт он осталось? Букв одна даль она предупредила
+                бросил запятых переписывается рекламных использовало взобравшись
+                раз собрал подпоясал рыбного взгляд несколько ручеек, океана
+                города? Страна большого приставка до текстов журчит.
+              </p>
+            </div>
+          </div>
+          <div class="btn-wrapper btn-wrapper--course">
+            <button class="btn--primary btn--primary--course">
+              Купить за 19 987 ₽
+            </button>
+          </div>
+        </div>
+
+        <div class="popup-inner--course" id="popup3">
+          <div class="popup-inner--course-wrapper">
+            <button
+              class="btn--close-popup btn--close-popup--course"
+              onclick="closePopup()"
+            >
+              <span>закрыть</span>
+            </button>
+            <div
+              class="popup-head--course"
+              style="background-image: url(/images/dest/course_popup_img1.png);"
+              data-rjs="2"
+            >
+              <h2 class="popup-title--course">Сопровождение <br />в полете</h2>
+            </div>
+            <div class="popup-text popup-text--course">
+              <p>
+                Далеко-далеко за словесными горами в стране гласных и согласных
+                живут рыбные тексты. Составитель меня заманивший вопрос рыбного,
+                своего бросил, все свое вскоре деревни всеми что буквенных
+                курсивных букв домах, правилами языкового текста.
+              </p>
+              <p>
+                Вы встретитесь за несколько часов до вылета, обсудите именно
+                вашу ситуацию ; Получите конкретные рекомендации по блокировке
+                адреналина (гормона страха) на физиологическом уровне: Разберете
+                какие ошибки в вашем мышлении создают страх и панику до и во
+                время полета и сможете скорректировать их: Получите много
+                полезных знаний об авиации, аэродинамике, авиационной
+                метеорологии, человеческом факторе и методах его уменьшения и
+                многом другом
+              </p>
+            </div>
+          </div>
+          <div class="btn-wrapper btn-wrapper--course">
+            <button class="btn--primary btn--primary--course">
+              Купить за 87 917 ₽
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>

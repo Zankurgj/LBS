@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%;">
+  <head>
+    <meta charset="utf-8" />
+    <title>LBS</title>
+    <meta name="description" content="LBS" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <meta property="og:image" content="img/dest/preview.jpg" />
+    <link rel="stylesheet" href="css/app.min.css" />
+  </head>
+
+  <body class="lk-body">
+    <div class="lk-container">
+      <aside class="lk-sidebar">
+        <header class="lk-header">
+          <a href="#" class="lk-header-logo">
+            <img src="./images/dest/Group.svg" alt="logo" />
+            <span class="visually-hidden">Главная</span>
+          </a>
+          <div class="lk-sidebar-info-ava lk-sidebar-info-ava--mobile">
+            <div
+              class="lk-sidebar-info-ava-inner lk-sidebar-info-ava-inner--mobile"
+            >
+              <span>И</span>
+            </div>
+          </div>
+        </header>
+        <nav class="lk-sidebar-nav">
+          <ul class="lk-nav-item-container">
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#inscription"
+                  ></use>
+                </svg>
+                <span>Мои курсы</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#bookmark"
+                  ></use>
+                </svg>
+                <span>Мои бронирования</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#task"
+                  ></use>
+                </svg>
+                <span>Результаты тестов</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="lk-sidebar-nav-item lk-sidebar-nav-item--active"
+              >
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#promocode"
+                  ></use>
+                </svg>
+                <span>Промокоды</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <article class="lk-sidebar-info">
+          <div class="lk-sidebar-info-ava">
+            <div class="lk-sidebar-info-ava-inner">
+              <span>И</span>
+            </div>
+          </div>
+          <div class="lk-sidebar-info-name">Илья Горбунов</div>
+          <button class="btn--lk-sidebar-info">Выйти</button>
+        </article>
+      </aside>
+      <main class="lk-content">
+        <header class="lk-content-header">
+          <h4 class="lk-content-title">Промокоды</h4>
+        </header>
+        <div class="lk-content-inner">
+          <article class="lk-content-stub lk-content-stub--promocode">
+            <p class="lk-content-stub-text lk-content-stub-text--promocode">
+              У вас пока нет промокодов.
+            </p>
+            <button
+              class="btn--add"
+              onclick="showPopup(this)"
+              data-popup-index="popup1"
+            >
+              <svg class="svg-icon btn--add-icon">
+                <use
+                  xlink:href="./images/sprites/svg/sprite.symbol.svg#icon-add"
+                ></use>
+              </svg>
+              Добавить
+            </button>
+          </article>
+        </div>
+      </main>
+    </div>
+    <!-- popup -->
+    <div class="popup-wrapper" id="popup-wrapper">
+      <div class="popup-overlay" onclick="closePopup()"></div>
+      <div class="popup-container--promocode">
+        <div class="popup-inner" id="popup1">
+          <button class="btn--close-popup" onclick="closePopup()">
+            <span>закрыть</span>
+          </button>
+          <h3 class="promocode-popup-title">Введите промокод</h3>
+          <form class="promocode-popup-form">
+            <div class="text-input-wrapper text-input-wrapper--promocode">
+              <input
+                type="text"
+                id="promocode"
+                class="text-input text-input--promocode"
+                required
+              />
+              <label for="promocode" class="text-input-label">
+                <span class="text-input-ph">Промокод</span>
+                <span class="text-input-err">Обязательное поле</span>
+              </label>
+            </div>
+            <button
+              type="submit"
+              id="promocodeBtn"
+              class="btn--primary btn--primary--promocode-popup"
+              disabled
+            >
+              Активировать
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.min.js"></script>
+    <script>
+      $('#promocode').on('input', function () {
+        var input = $(this);
+        var promocodeVal = input.val();
+        var btn = $('#promocodeBtn');
+        if (promocodeVal) {
+          btn.attr('disabled', false);
+        } else {
+          btn.attr('disabled', true);
+        }
+      });
+    </script>
+  </body>
+</html>

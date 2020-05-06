@@ -124,6 +124,71 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     ],
   });
+
+  $(window)
+    .on('resize', () => {
+      let init = $('.lk-course-wrapper').data('init-slider');
+      if (window.innerWidth < 1000) {
+        if (!init) {
+          $('.lk-course-wrapper')
+            .slick({
+              infinite: false,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              dots: false,
+              arrows: false,
+              mobileFirst: true,
+              variableWidth: true,
+              responsive: [
+                {
+                  breakpoint: 1000,
+                  settings: 'unslick',
+                },
+              ],
+            })
+            .data({ 'init-slider': true });
+        }
+      } else {
+        if (init) {
+          $('.lk-course-wrapper')
+            .slick('unslick')
+            .data({ 'init-slider': false });
+        }
+      }
+    })
+    .trigger('resize');
+
+  $('.extras-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: $('.slider-arrow--prev-extra'),
+    nextArrow: $('.slider-arrow--next-extra'),
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          variableWidth: true,
+        },
+      },
+      {
+        breakpoint: 812,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true,
+          arrows: false,
+        },
+      },
+    ],
+  });
   startAppend();
 });
 
@@ -333,8 +398,8 @@ const showPopup = (el) => {
 const closePopup = () => {
   renewScroll();
   const popup = $('#popup-wrapper');
-  popup.find('.js-show-popup').removeClass('js-show-popup');
   popup.fadeOut(500);
+  popup.find('.js-show-popup').removeClass('js-show-popup');
 };
 
 const stopScroll = () => {
@@ -367,5 +432,17 @@ const getScroll = () => {
         buttonEl.classList.remove('btn-header--mobile--show');
       }
     };
+  }
+};
+
+const changeTabs = (el) => {
+  const tabIndex = el.value;
+  const tabsEl = document.querySelectorAll('.lk-reserve-tab-wrapper');
+  const activetab = document.querySelector('.lk-reserve-tab-wrapper--show');
+  for (const tab of tabsEl) {
+    if (tab.getAttribute('data-tabIndex') === tabIndex) {
+      activetab.classList.remove('lk-reserve-tab-wrapper--show');
+      tab.classList.add('lk-reserve-tab-wrapper--show');
+    }
   }
 };
