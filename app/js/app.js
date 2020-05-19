@@ -387,10 +387,15 @@ const spoilerToogle = (el) => {
   animateEL.slideToggle(200);
 };
 
-const showPopup = (el) => {
+const showPopup = (el, id) => {
   stopScroll();
   const popup = $('#popup-wrapper');
-  const data = $(el).data('popup-index');
+  let data;
+  if ($(el).data('popup-index')) {
+    data = $(el).data('popup-index');
+  } else {
+    data = id;
+  }
   $(`#${data}`).addClass('js-show-popup');
   popup.fadeIn(500);
 };
@@ -401,7 +406,17 @@ const closePopup = () => {
   popup.fadeOut(500);
   popup.find('.js-show-popup').removeClass('js-show-popup');
 };
-
+const closeMailPopup = () => {
+  const popup = $('#popup-mail');
+  popup.fadeOut(500);
+};
+const onSumbmitEmalForm = () => {
+  const btnForm = document.querySelector('.popup-mail-button');
+  const inputForm = document.querySelector('#mailInput');
+  btnForm.classList.add('popup-mail-button--success');
+  btnForm.setAttribute('disabled', 'disabled');
+  inputForm.setAttribute('disabled', 'disabled');
+};
 const stopScroll = () => {
   $('html, body').css({
     overflow: 'hidden',

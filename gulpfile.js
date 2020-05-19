@@ -46,6 +46,7 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.min.js', // npm vendor example (npm i --save-dev jquery)
     'node_modules/jquery-timepicker/jquery.timepicker.js',
+    'node_modules/jquery-ui-dist/jquery-ui.min.js',
     'node_modules/slick-carousel/slick/slick.min.js',
     'node_modules/retinajs/dist/retina.min.js',
     'app/js/app.js', // app.js. Always at the end

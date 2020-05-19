@@ -18,17 +18,18 @@
   color: $deepblack;
   transition: all ease-in 0.1s;
   outline: none;
+  transform: translate3d(0, 0, 0);
   &:hover {
     background-color: #f8f8f8;
+  }
+  &:valid {
+    border: 1px solid #d6d6d6;
+    background-color: $white;
   }
   &:focus {
     border: 1px solid $accent;
     background-color: $white;
     outline: none;
-  }
-  &:valid {
-    border: 1px solid #d6d6d6;
-    background-color: $white;
   }
   &:focus,
   &:valid,
@@ -93,6 +94,7 @@
   font-size: 16px;
   line-height: 24px;
   color: $black;
+  transform: translate3d(0, 0, 0);
   &:focus {
     outline: none;
     border-color: $accent;
@@ -145,7 +147,6 @@
   font-size: 16px;
   line-height: 24px;
   transition: all ease-in 0.1s;
-  &:focus,
   &:valid {
     outline: none;
     background-color: $white;
@@ -153,6 +154,185 @@
     &::placeholder {
       opacity: 0;
     }
+  }
+  &:focus {
+    outline: none;
+    background-color: $white;
+    border: 1px solid $accent;
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+  &::placeholder {
+    font-size: inherit;
+    line-height: inherit;
+    color: $sec2;
+  }
+}
+
+// datapicker
+.ui-datepicker {
+  display: none;
+  background-color: $white;
+  border: 1px solid $gray2;
+  border-radius: 8px;
+  box-shadow: 0px 16px 50px rgba(0, 0, 0, 0.2);
+  padding: 16px 16px 12px 16px;
+  margin: 12px 0;
+  @media screen and (max-width: $mobile-bp) {
+    width: 100%;
+    left: 0 !important;
+    top: 140px !important;
+    bottom: auto !important;
+  }
+}
+.ui-datepicker-calendar {
+  @media screen and (max-width: $mobile-bp) {
+    margin: 0 auto;
+  }
+}
+.ui-datepicker-year {
+  display: none;
+}
+.ui-datepicker-current {
+  display: none;
+}
+.ui-datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.ui-datepicker-prev,
+.ui-datepicker-next {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 6px 9px;
+  cursor: pointer;
+  transition: opacity $base-duration $base-timing;
+  &:active {
+    opacity: 0.8;
+  }
+}
+.ui-datepicker-prev {
+  order: 1;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='9' viewBox='0 0 6 9' width='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m5.04986.638958c.38665.386652.38665 1.014252 0 1.400902l-2.63463 2.63463 2.63463 2.63462c.38665.38665.38665 1.01425 0 1.4009s-1.01425.38665-1.4009 0l-3.37524-3.37523c-.365168-.36517-.3651679-.95635 0-1.32059l3.37524-3.375232c.38665-.386648 1.01425-.386648 1.4009 0z' fill='%23777'/%3E%3C/svg%3E");
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' height='9' viewBox='0 0 6 9' width='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m5.04986.638958c.38665.386652.38665 1.014252 0 1.400902l-2.63463 2.63463 2.63463 2.63462c.38665.38665.38665 1.01425 0 1.4009s-1.01425.38665-1.4009 0l-3.37524-3.37523c-.365168-.36517-.3651679-.95635 0-1.32059l3.37524-3.375232c.38665-.386648 1.01425-.386648 1.4009 0z' fill='%232462F2'/%3E%3C/svg%3E");
+  }
+}
+.ui-datepicker-next {
+  order: 3;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='9' viewBox='0 0 6 9' width='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m.62983 8.36104c-.386648-.38665-.386648-1.01425 0-1.4009l2.63463-2.63463-2.63463-2.63462c-.386648-.38665-.386648-1.014255 0-1.400904.38665-.3866481 1.01425-.3866481 1.4009 0l3.37524 3.375234c.36517.36517.36517.95635 0 1.32059l-3.37524 3.37523c-.38665.38665-1.01425.38665-1.4009 0z' fill='%23777'/%3E%3C/svg%3E");
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' height='9' viewBox='0 0 6 9' width='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m.62983 8.36104c-.386648-.38665-.386648-1.01425 0-1.4009l2.63463-2.63463-2.63463-2.63462c-.386648-.38665-.386648-1.014255 0-1.400904.38665-.3866481 1.01425-.3866481 1.4009 0l3.37524 3.375234c.36517.36517.36517.95635 0 1.32059l-3.37524 3.37523c-.38665.38665-1.01425.38665-1.4009 0z' fill='%232462F2'/%3E%3C/svg%3E");
+  }
+}
+.ui-datepicker-title {
+  order: 2;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: $deepblack;
+  padding: 0 18px;
+}
+.ui-datepicker-calendar {
+  th {
+    font-size: 12px;
+    line-height: 32px;
+    color: $gray4;
+    font-weight: normal;
+    text-align: center;
+  }
+  td {
+    a {
+      display: block;
+      position: relative;
+      width: 32px;
+      height: 32px;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 32px;
+      color: $black;
+      text-align: center;
+      transition: color $base-duration $base-timing;
+      &:hover {
+        color: $white;
+        font-weight: bold;
+        &::before {
+          opacity: 1;
+        }
+      }
+      &:focus {
+        color: $white;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: $accent;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity $base-duration $base-timing;
+      }
+    }
+  }
+}
+.ui-datepicker-buttonpane {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: none;
+  @media screen and (max-width: $mobile-bp) {
+    display: block;
+  }
+}
+.ui-datepicker-close {
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='11' viewBox='0 0 11 11' width='11' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23444'%3E%3Cpath d='m10.2201-.00005801-10.2201 10.22005801.779778.7797 10.220122-10.219986z'/%3E%3Cpath d='m10.9994 10.2203-10.220103-10.22005586-.77977834.77977186 10.22008134 10.219984z'/%3E%3C/g%3E%3C/svg%3E");
+  &:hover {
+    background-image: url("data:image/svg+xml,%3Csvg fill='none' height='11' viewBox='0 0 11 11' width='11' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232462F2'%3E%3Cpath d='m10.2201-.00005801-10.2201 10.22005801.779778.7797 10.220122-10.219986z'/%3E%3Cpath d='m10.9994 10.2203-10.220103-10.22005586-.77977834.77977186 10.22008134 10.219984z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+.input-simple {
+  background-color: #f5f5f7;
+  border-radius: 4px;
+  padding: 16px;
+  font-size: 16px;
+  line-height: 24px;
+  color: $deepblack;
+  outline: none;
+  border: 1px solid #f5f5f7;
+  transition: all $base-duration $base-timing;
+  &:hover {
+    background-color: #f8f8f8;
+  }
+  &:valid {
+    background-color: $white;
+  }
+  &:focus {
+    border-color: $accent;
+    background-color: $white;
+  }
+  &.error {
+    border-color: #ff5050;
+  }
+  &:disabled,
+  &.disabled {
+    color: $sec2;
+    border: 1px solid #f5f5f7;
+    background-color: #f5f5f7;
   }
   &::placeholder {
     font-size: inherit;

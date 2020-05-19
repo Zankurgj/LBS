@@ -38,31 +38,60 @@
                 На основании результатов теста автоматически предлагаем вам
                 следующий список тем для изучения
               </p>
-              <fieldset class="page-format-field">
-                <legend class="page-format-legend page-format-legend--hide-mobile">Выберите формат курса</legend>
-                <div class="btn-wrapper btn-wrapper--format-course">
-                  <input
-                    type="radio"
-                    id="formatInPerson"
-                    name="format"
-                    value="formatInPerson"
-                    class="btn--toogle--large"
-                    checked
-                  />
-                  <label for="formatInPerson"> Очно </label>
-                  <input
-                    type="radio"
-                    id="formatInAbsentia"
-                    name="format"
-                    value="formatInPerson"
-                    class="btn--toogle--large"
-                  />
-                  <label for="formatInAbsentia">
-                    Заочно
-                  </label>
-                </div>
-              </fieldset>
             </div>
+            <fieldset class="page-format-item-wrapper page-format-item-wrapper--list-field">
+              <legend class="page-format-legend">Обязательные материалы</legend>
+              <ul class="page-format-list">
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Панические атаки
+                </li>
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Панические атаки
+                </li>
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Взлет
+                </li>
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Взлет
+                </li>
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Посадка
+                </li>
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Посадка
+                </li>
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Перфекционизм
+                </li>
+                <li class="page-format-list-item page-format-list-item--checkicon">
+                  Перфекционизм
+                </li>
+              </ul>
+            </fieldset>
+            <fieldset class="page-format-item-wrapper page-format-item-wrapper--page-format-field">
+              <legend class="page-format-legend">Выберите формат курса</legend>
+              <div class="btn-wrapper btn-wrapper--format-course">
+                <input
+                  type="radio"
+                  id="formatInPerson"
+                  name="format"
+                  value="formatInPerson"
+                  class="btn--toogle--large"
+                  checked
+                />
+                <label for="formatInPerson"> Очно </label>
+                <input
+                  type="radio"
+                  id="formatInAbsentia"
+                  name="format"
+                  value="formatInPerson"
+                  class="btn--toogle--large"
+                />
+                <label for="formatInAbsentia">
+                  Заочно
+                </label>
+              </div>
+          </fieldset>
           <fieldset class="page-format-item-wrapper page-format-item-wrapper--curator-field">
             <legend class="page-format-legend">Куратор</legend>
             <div class="btn-wrapper btn-wrapper--curator-field">
@@ -92,35 +121,6 @@
               />
               <label for="curatorVip" class="curator-field-item"> С Алексеем Герваш</label>
             </div>
-          </fieldset>
-          <fieldset class="page-format-item-wrapper page-format-item-wrapper--list-field">
-            <legend class="page-format-legend">Обязательные материалы</legend>
-            <ul class="page-format-list">
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Панические атаки
-              </li>
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Панические атаки
-              </li>
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Взлет
-              </li>
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Взлет
-              </li>
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Посадка
-              </li>
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Посадка
-              </li>
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Перфекционизм
-              </li>
-              <li class="page-format-list-item page-format-list-item--checkicon">
-                Перфекционизм
-              </li>
-            </ul>
           </fieldset>
           <fieldset class="page-format-item-wrapper page-format-item-wrapper--toogle-block">
             <legend class="page-format-legend">Дополнительные материалы</legend>
@@ -214,6 +214,20 @@
               />
               У меня есть промокод
             </button>
+            <div class="promocode-active">
+              <img
+                src="./images/dest/promocode_icon.svg"
+                alt="promocode icon"
+                class="promocode-active-icon"
+              />
+              <div class="promocode-active-text-wrapper">
+                <p class="promocode-active-text">Промокод HOP688</p>
+                <span class="promocode-active-subtitle">Скидка  500₽</span>
+              </div>
+              <button class="promocode-active-close">
+                <span class="visually-hidden">удалить промокод</span>
+              </button>
+            </div>
             <button type="submit" class="btn--primary btn--primary--page-format">
               Оплатить 3 000 ₽
             </button>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%;">
+  <head>
+    <meta charset="utf-8" />
+    <title>LBS</title>
+    <meta name="description" content="LBS" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <meta property="og:image" content="img/dest/preview.jpg" />
+    <link rel="stylesheet" href="css/app.min.css" />
+  </head>
+
+  <body class="lk-body">
+    <div class="lk-container">
+      <aside class="lk-sidebar">
+        <header class="lk-header">
+          <a href="#" class="lk-header-logo">
+            <img src="./images/dest/Group.svg" alt="logo" />
+            <span class="visually-hidden">Главная</span>
+          </a>
+          <div class="lk-sidebar-info-ava lk-sidebar-info-ava--mobile">
+            <div
+              class="lk-sidebar-info-ava-inner lk-sidebar-info-ava-inner--mobile"
+            >
+              <span>И</span>
+            </div>
+          </div>
+        </header>
+        <nav class="lk-sidebar-nav">
+          <ul class="lk-nav-item-container">
+            <li>
+              <a
+                href="#"
+                class="lk-sidebar-nav-item lk-sidebar-nav-item--active"
+              >
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#inscription"
+                  ></use>
+                </svg>
+                <span>Мои курсы</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#bookmark"
+                  ></use>
+                </svg>
+                <span>Мои бронирования</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#task"
+                  ></use>
+                </svg>
+                <span>Результаты тестов</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="lk-sidebar-nav-item">
+                <svg class="svg-icon">
+                  <use
+                    xlink:href="./images/sprites/svg/sprite.symbol.svg#promocode"
+                  ></use>
+                </svg>
+                <span>Промокоды</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <article class="lk-sidebar-info">
+          <div class="lk-sidebar-info-ava">
+            <div class="lk-sidebar-info-ava-inner">
+              <span>И</span>
+            </div>
+          </div>
+          <div class="lk-sidebar-info-name">Илья Горбунов</div>
+          <button class="btn--lk-sidebar-info">Выйти</button>
+        </article>
+      </aside>
+      <main class="lk-content">
+        <header class="lk-content-header">
+          <nav aria-label="Breadcrumb" class="lk-content-breadcrumb">
+            <ul class="lk-content-breadcrumb-container">
+              <li class="lk-content-breadcrumb-item">
+                <a href="#" aria-current="page">
+                  Мои курсы
+                </a>
+              </li>
+              <li
+                class="lk-content-breadcrumb-item lk-content-breadcrumb-item--current"
+              >
+                <span href="#" aria-current="page">
+                  Видеокурс «Взлёт»
+                </span>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="lk-content-inner">
+          <div class="container lk-lesson-container">
+            <div class="lk-lesson-content">
+              <div class="lk-lesson-video-container">
+                <video class="lk-lesson-video" id="lessonVideo" controls>
+                  <!-- <source src="./video/sample_video.mp4" type="video/webm" /> -->
+                  <source src="./video/sample_video.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div class="lk-lesson-text-inner">
+                <div class="lk-lesson-page-counter">
+                  <span class="lk-lesson-page-counter-current">1</span>
+                  из
+                  <span class="lk-lesson-page-counter-total">32</span>
+                </div>
+
+                <div class="lk-lesson-text-container">
+                  <h3 class="lk-lesson-text-title">
+                    Все об авиации. Часть 1. <br />Аэродинамика, ситемы,
+                    статистика, турбулентность.
+                  </h3>
+                  <p class="lk-lesson-text">
+                    Вполне возможно, вы в шаге от существенного усиления
+                    аэрофобии. Отказ от полета из-за страха, как правило,
+                    приводит к ухудшению ситуации и серьезному
+                  </p>
+                  <button class="btn--ellipse-gray">
+                    <svg class="svg-icon btn--ellipse-gray-icon">
+                      <use
+                        xlink:href="./images/sprites/svg/sprite.symbol.svg#icon-question"
+                      ></use>
+                    </svg>
+                    Задать вопрос куратору
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="lk-lesson-list-container">
+              <h4 class="lk-lesson-list-title">Далее</h4>
+              <ul class="lk-lesson-list-wrapper">
+                <li class="lk-lesson-list-item">
+                  Все об аэрофобии. Причины, связь с рисками, ошибки мышления,
+                  генетика, влияние личности
+                </li>
+                <li class="lk-lesson-list-item">
+                  Все об авиации. Часть 2. Воздушные ямы, система, человеческий
+                  фактор.
+                </li>
+                <li class="lk-lesson-list-item">
+                  Все об авиации. Часть 3. «А вдруг забудут?», «А вдруг
+                  откажет?», причины авиакатастроф (часть 1)
+                </li>
+                <li class="lk-lesson-list-item">
+                  Все об авиации. Часть 4. Авикатастрофы (часть2). Контроль над
+                  собой: Итоги авиачасти
+                </li>
+                <li class="lk-lesson-list-item">
+                  Тест по пройденному материалу
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <!-- popup -->
+    <div class="popup-wrapper" id="popup-wrapper">
+      <div class="popup-overlay" onclick="closePopup()"></div>
+      <div class="popup-container--course-done">
+        <div class="popup-inner" id="popup1">
+          <button class="btn--close-popup" onclick="closePopup()">
+            <span>закрыть</span>
+          </button>
+          <div class="course-done-popup-icon">
+            <img src="./images/dest/icon-done.svg" alt="icon" />
+          </div>
+          <h3 class="course-done-popup-title">
+            Вы прошли видеокурс<span>«Взлёт»</span>
+          </h3>
+          <p class="course-done-popup-text">
+            Сейчас самоев время пройти тест по <br />
+            пройденному материалу
+          </p>
+          <a href="#" class="btn--primary btn--primary--course-done--popup">
+            Пройти тестирование
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.min.js"></script>
+    <script>
+      // вызываем попап
+      showPopup(null, 'popup1');
+    </script>
+  </body>
+</html>

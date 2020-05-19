@@ -18,7 +18,7 @@ input[type='submit'] {
 
 .btn--primary {
   display: inline-block;
-  background: #2462f2;
+  background-color: #2462f2;
   border-radius: 4px;
   color: #fff;
   font-weight: 500;
@@ -27,12 +27,12 @@ input[type='submit'] {
   padding: 18px;
   min-width: 208px;
   &:hover {
-    background: #1253ea;
+    background-color: #1253ea;
     color: #fff;
   }
   &:active {
     color: rgba($color: #fff, $alpha: 0.7);
-    background: #0e4bd8;
+    background-color: #0e4bd8;
   }
   &.btn--primary--disabled,
   &:disabled {
