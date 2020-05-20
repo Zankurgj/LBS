@@ -505,6 +505,7 @@
   border-radius: 8px;
   padding: 31px 24px 24px 24px;
   background-repeat: no-repeat;
+  background-size: cover;
   @media screen and (max-width: $mobile-bp) {
     min-height: 160px;
   }
