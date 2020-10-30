@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%;">
+  <head>
+    <meta charset="utf-8" />
+    <title>LBS</title>
+    <meta name="description" content="LBS" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <meta property="og:image" content="img/dest/preview.jpg" />
+    <link rel="stylesheet" href="css/app.min.css" />
+  </head>
+
+  <body>
+    <header class="header-main--lk">
+      <a href="#" class="btn btn--header-circle btn--header-circle--back">
+        <svg class="svg-icon">
+          <use
+            xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-prev"
+          ></use>
+        </svg>
+        <span class="visually-hidden">назад</span>
+      </a>
+      <a href="#" class="header-main--lk-logo">
+        <img src="./images/dest/Group.svg" alt="logo" />
+        <span class="visually-hidden">Главная</span>
+      </a>
+      <a href="#" class="btn btn--header-circle btn--header-circle--profile">
+        <span class="visually-hidden">Личный кабинет</span>
+      </a>
+    </header>
+    <div class="page--checkout">
+        <div class="container container--checkout">
+          <div class="checkout--body">
+            <h2 class="checkout-caption">Оформление заказа</h2>
+
+            <div class="checkout-steps-block">
+
+              <div class="checkout-steps-item active" id="iconPersonal">
+                <div class="checkout-steps-item-icon">
+                  <svg class="svg-icon">
+                    <use
+                      xlink:href="./images/sprites/svg/sprite.symbol.svg#37"
+                    ></use>
+                  </svg>
+                </div>
+
+                <span class="checkout-steps-text">
+                  Личные данные
+                </span>
+              </div>
+
+              <div class="checkout-steps-item--separator"></div>
+              <div class="checkout-steps-item" id="iconAdress">
+                <div class="checkout-steps-item-icon">
+                  <svg class="svg-icon">
+                    <use
+                      xlink:href="./images/sprites/svg/sprite.symbol.svg#46"
+                    ></use>
+                  </svg>
+                </div>
+
+                <span class="checkout-steps-text">
+                  Доставка
+                </span>
+              </div>
+
+              <div class="checkout-steps-item--separator"></div>
+              <div class="checkout-steps-item">
+                <div class="checkout-steps-item-icon">
+                  <svg class="svg-icon">
+                    <use
+                      xlink:href="./images/sprites/svg/sprite.symbol.svg#49"
+                    ></use>
+                  </svg>
+                </div>
+                <span class="checkout-steps-text">
+                  Оплата
+                </span>
+              </div>
+            </div>
+
+            <form class="checkout-form show" id="personalForm" onsubmit="onSumbmitPersonal();return false">
+              <h4 class="checkout-form-title">Персональные данные</h4>
+              <div class="text-input-wrapper">
+                <input
+                  type="text"
+                  id="name"
+                  class="text-input text-input--checkout"
+                  required
+                />
+                <label for="name" class="text-input-label">
+                  <span class="text-input-ph">Имя</span>
+                  <span class="text-input-err">Обязательное поле</span>
+                </label>
+              </div>
+
+              <div class="text-input-wrapper">
+                <input
+                  type="text"
+                  id="surname"
+                  class="text-input text-input--checkout"
+                  required
+                />
+                <label for="surname" class="text-input-label">
+                  <span class="text-input-ph">Фамилия</span>
+                  <span class="text-input-err">Обязательное поле</span>
+                </label>
+              </div>
+
+              <div class="text-input-wrapper">
+                <input
+                  type="text"
+                  id="email"
+                  class="text-input text-input--checkout"
+                  required
+                />
+                <label for="email" class="text-input-label">
+                  <span class="text-input-ph">Электронная почта</span>
+                  <span class="text-input-err">Обязательное поле</span>
+                </label>
+              </div>
+
+              <div class="text-input-wrapper">
+                <input
+                  type="text"
+                  id="phone"
+                  class="text-input text-input--checkout"
+                  required
+                />
+                <label for="phone" class="text-input-label">
+                  <span class="text-input-ph">Телефон</span>
+                  <span class="text-input-err">Обязательное поле</span>
+                </label>
+              </div>
+              <label class="base-checkbox-wrapper base-checkbox-wrapper--checkout">
+                <input type="checkbox" class="base-checkbox" required>
+                <span class="base-checkbox-fake"></span>
+                <span class="base-checkbox-text"> <a href="#">Согласие</a> на обработку моих персональных данных</span>
+              </label>
+
+              <button class="btn--primary checkout-form-btn" type="submit">Выбрать способ доставки</button>
+            </form>
+
+            <form class="checkout-form" id="adressForm" onsubmit="onSumbmitAdreess();return false">
+              <h4 class="checkout-form-title">Адрес доставки</h4>
+              <div class="text-input-wrapper">
+                <input
+                  type="text"
+                  id="region"
+                  class="text-input text-input--checkout"
+                  required
+                />
+                <label for="region" class="text-input-label">
+                  <span class="text-input-ph">Регион доставки</span>
+                  <span class="text-input-err">Обязательное поле</span>
+                </label>
+              </div>
+
+                <textarea
+                class="simple-textarea simple-textarea--test-resalt"
+                name="adress"
+                id="adress"
+                placeholder="Адрес доставки"
+                required
+              ></textarea>
+              <div class="btn-wrapper btn-wrapper--checkout">
+                <input
+                  type="radio"
+                  id="russia"
+                  name="reserve"
+                  value="tab1"
+                  class="btn--toogle--large"
+                  required
+                  checked
+                />
+                <label for="russia"> Доставка по России </label>
+                <input
+                  type="radio"
+                  id="pickup"
+                  name="reserve"
+                  value="tab2"
+                  class="btn--toogle--large"
+                  required
+                />
+                <label for="pickup">
+                  Самовывоз
+                </label>
+              </div>
+
+              <button class="btn--primary checkout-form-btn" type="submit">Выбрать способ оплаты</button>
+            </form>
+
+            <form class="checkout-form" id="paymantForm">
+              <h4 class="checkout-form-title">Адрес доставки</h4>
+              <div class="btn-wrapper btn-wrapper-radio-checkout">
+                <input
+                  type="radio"
+                  id="value1"
+                  name="paymant"
+                  value="value1"
+                  class="btn--radio btn--radio--label"
+                  required
+                  onchange="onSetPaymant()"
+                />
+                <label for="value1" class="checkout-radio-item">Оплата на карту Тинькофф</label>
+                <input
+                  type="radio"
+                  id="value2"
+                  name="paymant"
+                  value="value2"
+                  class="btn--radio btn--radio--label"
+                  onchange="onSetPaymant()"
+                  required
+                />
+                <label for="value2" class="checkout-radio-item"> Оплата банковской картой</label>
+                <input
+                  type="radio"
+                  id="value3"
+                  name="paymant"
+                  value="value3"
+                  class="btn--radio btn--radio--label"
+                  onchange="onSetPaymant()"
+                  required
+                />
+                <label for="value3" class="checkout-radio-item"> Сбер Банк Онлайн</label>
+                <input
+                  type="radio"
+                  id="value4"
+                  name="paymant"
+                  value="value4"
+                  class="btn--radio btn--radio--label"
+                  onchange="onSetPaymant()"
+                  required
+                />
+                <label for="value4" class="checkout-radio-item"> PayPal</label>
+                <input
+                  type="radio"
+                  id="value5"
+                  name="paymant"
+                  value="value5"
+                  class="btn--radio btn--radio--label"
+                  onchange="onSetPaymant()"
+                  required
+                />
+                <label for="value5" class="checkout-radio-item"> Банковский перевод</label>
+              </div>
+              <button class="promocode-link promocode-link--checkout" onclick="showPopup(this)"
+            data-popup-index="popup1" type="button">
+              <img
+                src="./images/dest/promocode_icon.svg"
+                alt="promocode icon"
+                class="promocode-link-icon"
+              />
+              У меня есть промокод
+            </button>
+
+              <button class="btn--primary checkout-form-btn" type="submit" id="paymantBtn" disabled>Перейти к оплате</button>
+            </form>
+          </div>
+        </div>
+    </div>
+    <footer class="mp-footer-block container-fluid">
+      <div class="mp-footer-about">
+        <p>
+          Центр Алексея Герваш «Летаем без страха» — эффективное лечение
+          аэрофобии. Изучаем и устраняем страх полёта с 2008 года.
+        </p>
+      </div>
+      <div class="mp-footer-contacts mp-footer-contacts--mobile">
+        <div class="mp-footer-contacts-social">
+          <div class="mp-footer-contacts-social-item-wrapper">
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--fb"
+              ><span>facebook</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--inst"
+              ><span>instagram</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--vk"
+              ><span>vkontakte</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--tw"
+              ><span>twitter</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <nav class="mp-footer-nav">
+        <ul class="mp-footer-nav-item-wrapper">
+          <li><a href="#" class="mp-footer-nav-item">О центре</a></li>
+          <li>
+            <a href="#" class="mp-footer-nav-item">Истории выпускников</a>
+          </li>
+          <li>
+            <a href="#" class="mp-footer-nav-item">Гарантии результата</a>
+          </li>
+          <li><a href="#" class="mp-footer-nav-item">Наша команда</a></li>
+          <li><a href="#" class="mp-footer-nav-item">База знаний</a></li>
+          <li><a href="#" class="mp-footer-nav-item">СМИ о нас</a></li>
+          <li><a href="#" class="mp-footer-nav-item">Приложения</a></li>
+          <li><a href="#" class="mp-footer-nav-item">Контакты</a></li>
+        </ul>
+      </nav>
+      <div class="mp-footer-contacts mp-footer-contacts-desktop">
+        <a href="" class="mp-footer-contacts-phone">+7 (495) 649-87-62</a>
+        <p class="mp-footer-contacts-social-title">Перезвоните мне</p>
+        <div class="mp-footer-contacts-social">
+          <div class="mp-footer-contacts-social-item-wrapper">
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--fb"
+              ><span>facebook</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--inst"
+              ><span>instagram</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--vk"
+              ><span>vkontakte</span></a
+            >
+            <a
+              href="#"
+              class="mp-footer-contacts-social-item mp-footer-contacts-social-item--tw"
+              ><span>twitter</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="popup-wrapper" id="popup-wrapper">
+      <div class="popup-overlay" onclick="closePopup()"></div>
+      <div class="popup-container--promocode">
+        <div class="popup-inner" id="popup1">
+          <button class="btn--close-popup" onclick="closePopup()">
+            <span>закрыть</span>
+          </button>
+          <h3 class="promocode-popup-title">Введите промокод</h3>
+            <form class="promocode-popup-form">
+              <div class="text-input-wrapper text-input-wrapper--promocode">
+                <input type="text" id="promocode" class="text-input text-input--promocode" required />
+                <label for="promocode" class="text-input-label">
+                  <span class="text-input-ph">Промокод</span>
+                  <span class="text-input-err">Обязательное поле</span>
+                </label>
+              </div>
+              <button type="submit" id="promocodeBtn" class="btn--primary btn--primary--promocode-popup" disabled>
+                Активировать
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <script src="js/app.min.js"></script>
+    <script>
+      $('#promocode').on('input', function() {
+        var input = $(this);
+        var promocodeVal = input.val();
+        var btn = $('#promocodeBtn');
+        if (promocodeVal) {
+          btn.attr("disabled", false);
+        } else {
+          btn.attr("disabled", true);
+        }
+      });
+      function onSumbmitPersonal() {
+        hideForm('#adressForm')
+        document.querySelector('#iconPersonal').classList.add('checked');
+      }
+      function onSumbmitAdreess() {
+        hideForm('#paymantForm')
+        document.querySelector('#iconAdress').classList.add('checked');
+        document.querySelector('#iconAdress').classList.add('active');
+      }
+      function onSetPaymant() {
+        document.querySelector('#paymantBtn').disabled = false;
+      }
+
+      function hideForm(formSelector) {
+        const allForms = document.querySelectorAll('.checkout-form');
+        for(const form of allForms) {
+          form.classList.remove('show');
+        }
+        document.querySelector(formSelector).classList.add('show');
+      }
+    </script>  
+  </body>
+</html>

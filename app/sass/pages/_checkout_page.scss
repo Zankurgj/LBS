@@ -1,0 +1,117 @@
+.page--checkout {
+  background-color: #fafafc;
+  padding: 120px 0 180px 0;
+}
+
+.checkout--body {
+  margin: 0 auto;
+  max-width: 720px;
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 58px 96px 50px 96px;
+}
+.checkout-caption {
+  text-align: center;
+}
+
+.checkout-steps-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.checkout-steps-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #98a4b2;
+  .svg-icon {
+    width: 32px;
+    height: 32px;
+  }
+  .checkout-steps-item-icon {
+    position: relative;
+    margin-bottom: 10px;
+  }
+  &.active {
+    color: $accent;
+  }
+  &.checked {
+    .checkout-steps-item-icon {
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        right: 0;
+        bottom: 0;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("data:image/svg+xml,%3Csvg fill='none' height='12' viewBox='0 0 12 12' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m6 0c-3.3135 0-6 2.69289-6 6.01428 0 3.32138 2.6865 6.01432 6 6.01432s6-2.69294 6-6.01432c0-3.32139-2.6865-6.01428-6-6.01428zm-.625 8.66658-2.25-2.1872.9285-.93121 1.3215 1.25598 2.8215-2.89888.9285.93071z' fill='%2343bd41'/%3E%3C/svg%3E");
+      }
+    }
+    & + .checkout-steps-item--separator {
+      background-color: $accent;
+    }
+  }
+}
+
+.checkout-steps-item--separator {
+  flex-grow: 1;
+  max-width: 72px;
+  height: 1px;
+  background-color: #98a4b2;
+}
+
+.checkout-steps-text {
+  font-size: 13px;
+  line-height: 13px;
+}
+.checkout-form {
+  padding: 60px 0 0 0;
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+.checkout-form-title {
+  margin-bottom: 24px;
+}
+.text-input--checkout {
+  width: 100%;
+  margin-bottom: 32px;
+}
+.base-checkbox-wrapper--checkout {
+  margin-bottom: 32px;
+}
+.checkout-form-btn {
+  width: 100%;
+}
+.btn-wrapper--checkout {
+  width: 100%;
+  display: flex;
+  margin-bottom: 40px;
+  label {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+.btn-wrapper-radio-checkout {
+  flex-direction: column;
+}
+.btn--radio--label + .checkout-radio-item {
+  margin-bottom: 24px;
+  padding-right: 24px;
+  padding-left: 72px;
+  &::before {
+    right: auto;
+    left: 24px;
+  }
+  &::after {
+    right: auto;
+    left: 31px;
+  }
+}
+.promocode-link--checkout {
+  margin-bottom: 36px;
+}
