@@ -1,17 +1,33 @@
 .page--checkout {
   background-color: #fafafc;
   padding: 120px 0 180px 0;
+  @media screen and (max-width: $mobile-bp) {
+    padding: 40px 0 0 0;
+    background-color: #fff;
+  }
 }
-
+.container--checkout {
+  @media screen and (max-width: $mobile-bp) {
+    padding: 0;
+  }
+}
 .checkout--body {
   margin: 0 auto;
   max-width: 720px;
   border-radius: 8px;
   background-color: #fff;
   padding: 58px 96px 50px 96px;
+  @media screen and (max-width: $mobile-bp) {
+    padding: 58px 20px 50px 20px;
+  }
 }
 .checkout-caption {
   text-align: center;
+  @media screen and (max-width: $mobile-bp) {
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 36px;
+  }
 }
 
 .checkout-steps-block {
@@ -24,6 +40,9 @@
   flex-direction: column;
   align-items: center;
   color: #98a4b2;
+  @media screen and (max-width: $mobile-bp) {
+    max-width: 70px;
+  }
   .svg-icon {
     width: 32px;
     height: 32px;
@@ -66,6 +85,9 @@
 .checkout-steps-text {
   font-size: 13px;
   line-height: 13px;
+  @media screen and (max-width: $mobile-bp) {
+    text-align: center;
+  }
 }
 .checkout-form {
   padding: 60px 0 0 0;
@@ -83,6 +105,9 @@
 }
 .base-checkbox-wrapper--checkout {
   margin-bottom: 32px;
+  .base-checkbox-fake {
+    flex: 0 0 auto;
+  }
 }
 .checkout-form-btn {
   width: 100%;
@@ -106,6 +131,9 @@
   &::before {
     right: auto;
     left: 24px;
+    @media screen and (max-width: $mobile-bp) {
+      left: 26px;
+    }
   }
   &::after {
     right: auto;
