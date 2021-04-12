@@ -126,6 +126,10 @@
   align-items: center;
   justify-content: center;
   filter: drop-shadow(0px 5px 25px rgba(0, 0, 0, 0.15));
+  a {
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+  }
   @media screen and (max-width: $mobile-bp) {
     justify-content: flex-start;
     padding: 0.5em;
