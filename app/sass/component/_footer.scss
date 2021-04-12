@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-color: $deepblack;
-  background-image: url('../images/dest/footer_bg.png');
+  background-image: url("../images/dest/footer_bg.png");
   flex-wrap: wrap;
   @media screen and (max-width: 1200px) {
     padding: 60px 60px 74px 60px;
@@ -14,7 +14,7 @@
     align-items: center;
     padding: 26px 20px 40px 20px;
     background-position: right center;
-    background-image: url('../images/dest/bird.svg');
+    background-image: url("../images/dest/bird.svg");
   }
 }
 .mp-footer-about {
@@ -131,15 +131,10 @@
   letter-spacing: -0.31px;
   color: $gray1;
   margin-bottom: 10px;
-  @media screen and (max-width: $mobile-bp) {
-    display: none;
+  &:hover {
+    color: rgba($color: $gray1, $alpha: 0.8);
   }
 }
-// .mp-footer-contacts-social {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-end;
-// }
 .mp-footer-contacts-social-item-wrapper {
   display: flex;
   align-items: center;
