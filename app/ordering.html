@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%;">
+
+<head>
+    <meta charset="utf-8" />
+    <title>LBS</title>
+    <meta name="description" content="LBS" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <meta property="og:image" content="img/dest/preview.jpg" />
+    <link rel="stylesheet" href="css/app.min.css" />
+</head>
+
+<body>
+    <header class="header-order">
+        <a href="#" class="btn btn--header-order-circle btn--header-order-circle--back">
+            <svg class="svg-icon">
+                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-prev"></use>
+            </svg>
+            <span class="visually-hidden">назад</span>
+        </a>
+        <a href="#" class="header-order-logo">
+            <span class="visually-hidden">главная страница</span>
+            <img src="images/dest/Group.svg" alt="Летаем без страха логотип">
+        </a>
+        <nav class="header-order-nav">
+            <ul class="header-order-list">
+                <li>
+                    <a href="#" class="header-order-nav-item">О центре</a>
+                </li>
+                <li>
+                    <a href="#" class="header-order-nav-item active">Магазин</a>
+                </li>
+                <li>
+                    <a href="#" class="header-order-nav-item">Пройти тест</a>
+                </li>
+                <li>
+                    <a href="#" class="header-order-nav-item">Обсудить со специалистом</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-order-right">
+            <a href="#" class="header-order-btn header-order-btn--basket">
+                <span class="header-order-basket-counter">12</span>
+                <span class="header-order-basket-tooltip">
+                    В корзине один товар на сумму 12 990 Руб.
+                </span>
+                <span class="visually-hidden">корзина</span>
+                <svg class="svg-icon">
+                    <use xlink:href="./images/sprites/svg/sprite.symbol.svg#cart"></use>
+                </svg>
+            </a>
+            <button class="header-order-btn">
+                <span class="visually-hidden">Личный кабинет</span>
+                <svg class="svg-icon">
+                    <use xlink:href="./images/sprites/svg/sprite.symbol.svg#account"></use>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="page--ordering">
+        <div class="container container--ordering">
+            <section class="ordering-body">
+                <form class="ordering-form">
+                    <h1 class="ordering-form-h1">Оформление заказа</h1>
+                    <div class="ordering-for-item-wrapper">
+                        <div class="ordering-for-item">
+                            <div class="ordering-for-item-img">
+                                <img src="./images/dest/course.svg" alt="Курс" />
+                            </div>
+                            <div class="ordering-for-item-inner">
+                                <p class="ordering-for-item-text">Видеокурс. Всё о погоде: грозы, осадки, обледенение.
+                                    Азы
+                                    авиационной метеорологии.</p>
+                                <p class="ordering-for-item-cost">4 990 Руб.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ordering-form-block">
+                        <h4 class="ordering-form-title">Персональные данные</h4>
+                        <div class="text-input-wrapper text-input-wrapper--ordering">
+                            <input type="text" id="name" class="text-input text-input--ordering" required />
+                            <label for="name" class="text-input-label">
+                                <span class="text-input-ph">Имя</span>
+                                <span class="text-input-err">Обязательное поле</span>
+                            </label>
+                        </div>
+                        <div class="text-input-wrapper text-input-wrapper--ordering">
+                            <input type="text" id="surname" class="text-input text-input--ordering" required />
+                            <label for="surname" class="text-input-label">
+                                <span class="text-input-ph">Фамилия</span>
+                                <span class="text-input-err">Обязательное поле</span>
+                            </label>
+                        </div>
+
+                        <div class="text-input-wrapper text-input-wrapper--ordering">
+                            <input type="text" id="email" class="text-input text-input--ordering" required />
+                            <label for="email" class="text-input-label">
+                                <span class="text-input-ph">Электронная почта</span>
+                                <span class="text-input-err">Обязательное поле</span>
+                            </label>
+                        </div>
+
+                        <div class="text-input-wrapper text-input-wrapper--ordering">
+                            <input type="text" id="phone" class="text-input text-input--ordering" required />
+                            <label for="phone" class="text-input-label">
+                                <span class="text-input-ph">Телефон</span>
+                                <span class="text-input-err">Обязательное поле</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="promocode-link promocode-link--ordering" onclick="showPopup(this)"
+                        data-popup-index="popup1" type="button">
+                        <img src="./images/dest/promocode_icon.svg" alt="promocode icon" class="promocode-link-icon" />
+                        У меня есть промокод
+                    </button>
+                    <div class="ordering-form-block">
+                        <h4 class="ordering-form-title">Персональные данные</h4>
+                        <input type="radio" id="value1" name="paymant" value="value1"
+                            class="btn--radio btn--radio--label" required />
+                        <label for="value1" class="checkout-radio-item checkout-radio-item--ordering">Оплата на карту
+                            Тинькофф</label>
+                        <input type="radio" id="value2" name="paymant" value="value2"
+                            class="btn--radio btn--radio--label" required />
+                        <label for="value2" class="checkout-radio-item checkout-radio-item--ordering"> Оплата банковской
+                            картой</label>
+                        <input type="radio" id="value3" name="paymant" value="value3"
+                            class="btn--radio btn--radio--label" required />
+                        <label for="value3" class="checkout-radio-item checkout-radio-item--ordering"> Сбер Банк
+                            Онлайн</label>
+                        <input type="radio" id="value4" name="paymant" value="value4"
+                            class="btn--radio btn--radio--label" required />
+                        <label for="value4" class="checkout-radio-item checkout-radio-item--ordering"> PayPal</label>
+                        <input type="radio" id="value5" name="paymant" value="value5"
+                            class="btn--radio btn--radio--label" required />
+                    </div>
+                    <label class="base-checkbox-wrapper base-checkbox-wrapper--ordering">
+                        <input type="checkbox" class="base-checkbox" required>
+                        <span class="base-checkbox-fake"></span>
+                        <span class="base-checkbox-text"> <a href="#">Согласие</a> на обработку моих персональных
+                            данных</span>
+                    </label>
+                    <button class="btn--primary ordering-form-btn" type="submit">Оформить заказ</button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <div class="popup-wrapper" id="popup-wrapper">
+        <div class="popup-overlay" onclick="closePopup()"></div>
+        <div class="popup-container--promocode">
+            <div class="popup-inner" id="popup1">
+                <button class="btn--close-popup" onclick="closePopup()">
+                    <span>закрыть</span>
+                </button>
+                <h3 class="promocode-popup-title">Введите промокод</h3>
+                <form class="promocode-popup-form">
+                    <div class="text-input-wrapper text-input-wrapper--promocode">
+                        <input type="text" id="promocode" class="text-input text-input--promocode" required />
+                        <label for="promocode" class="text-input-label">
+                            <span class="text-input-ph">Промокод</span>
+                            <span class="text-input-err">Обязательное поле</span>
+                        </label>
+                    </div>
+                    <button type="submit" id="promocodeBtn" class="btn--primary btn--primary--promocode-popup" disabled>
+                        Активировать
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.min.js"></script>
+    <script>
+        $('#promocode').on('input', function () {
+            var input = $(this);
+            var promocodeVal = input.val();
+            var btn = $('#promocodeBtn');
+            if (promocodeVal) {
+                btn.attr("disabled", false);
+            } else {
+                btn.attr("disabled", true);
+            }
+        });
+    </script>
+</body>
+
+</html>
