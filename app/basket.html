@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru" style="height: 100%;">
+
+<head>
+    <meta charset="utf-8" />
+    <title>LBS</title>
+    <meta name="description" content="LBS" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" href="img/favicon.png" /> -->
+    <meta property="og:image" content="img/dest/preview.jpg" />
+    <link rel="stylesheet" href="css/app.min.css" />
+</head>
+
+<body>
+    <header class="header-order">
+        <a href="#" class="btn btn--header-order-circle btn--header-order-circle--back">
+            <svg class="svg-icon">
+                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-prev"></use>
+            </svg>
+            <span class="visually-hidden">назад</span>
+        </a>
+        <a href="#" class="header-order-logo">
+            <span class="visually-hidden">главная страница</span>
+            <img src="images/dest/Group.svg" alt="Летаем без страха логотип">
+        </a>
+        <nav class="header-order-nav">
+            <ul class="header-order-list">
+                <li>
+                    <a href="#" class="header-order-nav-item">О центре</a>
+                </li>
+                <li>
+                    <a href="#" class="header-order-nav-item active">Магазин</a>
+                </li>
+                <li>
+                    <a href="#" class="header-order-nav-item">Пройти тест</a>
+                </li>
+                <li>
+                    <a href="#" class="header-order-nav-item">Обсудить со специалистом</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header-order-right">
+            <a href="#" class="header-order-btn header-order-btn--basket">
+                <span class="header-order-basket-counter">12</span>
+                <span class="header-order-basket-tooltip">
+                    В корзине один товар на сумму 12 990 Руб.
+                </span>
+                <span class="visually-hidden">корзина</span>
+                <svg class="svg-icon">
+                    <use xlink:href="./images/sprites/svg/sprite.symbol.svg#cart"></use>
+                </svg>
+            </a>
+            <button class="header-order-btn">
+                <span class="visually-hidden">Личный кабинет</span>
+                <svg class="svg-icon">
+                    <use xlink:href="./images/sprites/svg/sprite.symbol.svg#account"></use>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="page--basket">
+        <div class="container container--basket">
+            <h1 class="h1--basket">Корзина</h1>
+            <div class="basket-items-wrapper">
+                <div class="basket-item">
+                    <div class="basket-item-img">
+                        <img src="./images/dest/course.svg" alt="Курс" />
+                    </div>
+                    <div class="basket-item-inner">
+                        <div class="basket-item-col-text">
+                            <p class="basket-item-text">Видеокурс. Всё о погоде: грозы, осадки, обледенение.Азы
+                                авиационной метеорологии.</p>
+                        </div>
+                        <div class="basket-item-col-counter">
+                            <div class="basket-item-counter">
+                                <button class="btn-item-counter btn-item-counter--minus"
+                                    onclick="onCounterMinus('counter1')"><span>–</span></button>
+                                <input class="item-counter-input" type="text" value="0" size="4" readonly id="counter1">
+                                <button class="btn-item-counter btn-item-counter--plus"
+                                    onclick="onCounterPlus('counter1')"><span>+</span></button>
+                            </div>
+                        </div>
+                        <div class="basket-item-col-cost">
+                            <p class="basket-item-cost">12 990 Руб.</p>
+                        </div>
+                    </div>
+                    <button class="basket-item-btn-remove">
+                        <span class="visually-hidden">Удалить</span>
+                    </button>
+                </div>
+                <div class="basket-item">
+                    <div class="basket-item-img">
+                        <img src="./images/dest/course.svg" alt="Курс" />
+                    </div>
+                    <div class="basket-item-inner">
+                        <div class="basket-item-col-text">
+                            <p class="basket-item-text">Видеокурс. Всё о погоде: грозы, осадки, обледенение.Азы
+                                авиационной метеорологии.</p>
+                        </div>
+                        <div class="basket-item-col-counter">
+                            <div class="basket-item-counter">
+                                <button class="btn-item-counter btn-item-counter--minus"
+                                    onclick="onCounterMinus('counter2')"><span>–</span></button>
+                                <input class="item-counter-input" type="text" value="0" size="4" readonly id="counter2">
+                                <button class="btn-item-counter btn-item-counter--plus"
+                                    onclick="onCounterPlus('counter2')"><span>+</span></button>
+                            </div>
+                        </div>
+                        <div class="basket-item-col-cost">
+                            <p class="basket-item-cost">12 990 Руб.</p>
+                        </div>
+                    </div>
+                    <button class="basket-item-btn-remove">
+                        <span class="visually-hidden">Удалить</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="basket-bottom-wrapper">
+            <div class="container container--basket">
+                <div class="basket-bottom">
+                    <div class="basket-bottom-text-block">
+                        <span class="basket-bottom-cost-title">Итого</span>
+                        <span class="basket-bottom-cost">17 890 Руб.</span>
+                        <button class="basket-bottom-promocode" onclick="showPopup(this)" data-popup-index="popup1">У
+                            меня есть промокод</button>
+                    </div>
+                    <a href="#" class="btn btn--primary btn--primary--basket-bottom">Оформить заказ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.min.js"></script>
+    <script>
+        function onCounterMinus(id) {
+            var val = getCounterVal(id);
+            if (val > 0) {
+                --val;
+            }
+            setCounterVal(id, val);
+        };
+        function onCounterPlus(id) {
+            var val = getCounterVal(id);
+            ++val;
+            setCounterVal(id, val);
+        };
+        function getCounterVal(id) {
+            return document.getElementById(id).value;
+        };
+        function setCounterVal(id, val) {
+            document.getElementById(id).value = val;
+        };
+    </script>
+</body>
+
+</html>
