@@ -130,6 +130,29 @@
             </div>
         </div>
     </div>
+    <div class="popup-wrapper" id="popup-wrapper">
+        <div class="popup-overlay" onclick="closePopup()"></div>
+        <div class="popup-container--promocode">
+            <div class="popup-inner" id="popup1">
+                <button class="btn--close-popup" onclick="closePopup()">
+                    <span>закрыть</span>
+                </button>
+                <h3 class="promocode-popup-title">Введите промокод</h3>
+                <form class="promocode-popup-form">
+                    <div class="text-input-wrapper text-input-wrapper--promocode">
+                        <input type="text" id="promocode" class="text-input text-input--promocode" required />
+                        <label for="promocode" class="text-input-label">
+                            <span class="text-input-ph">Промокод</span>
+                            <span class="text-input-err">Обязательное поле</span>
+                        </label>
+                    </div>
+                    <button type="submit" id="promocodeBtn" class="btn--primary btn--primary--promocode-popup" disabled>
+                        Активировать
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="js/app.min.js"></script>
     <script>
         function onCounterMinus(id) {
@@ -150,6 +173,16 @@
         function setCounterVal(id, val) {
             document.getElementById(id).value = val;
         };
+        $('#promocode').on('input', function () {
+            var input = $(this);
+            var promocodeVal = input.val();
+            var btn = $('#promocodeBtn');
+            if (promocodeVal) {
+                btn.attr("disabled", false);
+            } else {
+                btn.attr("disabled", true);
+            }
+        });
     </script>
 </body>
 
