@@ -13,17 +13,15 @@
 
 <body>
     <header class="header-order">
-        <a href="#" class="btn btn--header-order-circle btn--header-order-circle--back">
-            <svg class="svg-icon">
-                <use xlink:href="./images/sprites/svg/sprite.symbol.svg#arrow-prev"></use>
-            </svg>
-            <span class="visually-hidden">назад</span>
-        </a>
+        <button class="btn-hamburger js--mobile-menu-btn">
+            <span class="btn-hamburger-icon"></span>
+            <span class="visually-hidden">меню</span>
+        </button>
         <a href="#" class="header-order-logo">
             <span class="visually-hidden">главная страница</span>
             <img src="images/dest/Group.svg" alt="Летаем без страха логотип">
         </a>
-        <nav class="header-order-nav">
+        <nav class="header-order-nav js--mobile-menu">
             <ul class="header-order-list">
                 <li>
                     <a href="#" class="header-order-nav-item">О центре</a>
@@ -182,6 +180,12 @@
             } else {
                 btn.attr("disabled", true);
             }
+        });
+        $('.js--mobile-menu-btn').on('click', function (evt) {
+            var btn = $(evt.currentTarget);
+            var menu = $('.js--mobile-menu');
+            btn.toggleClass('btn-hamburger--active');
+            menu.toggleClass('header-order-nav--show');
         });
     </script>
 </body>
